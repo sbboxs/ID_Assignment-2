@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quizstyle.css">
     <title>Math Quiz</title>
 </head>
 <body>
     <header>
-        <h1>MATH GAME WEBSITE</h1>
+        <h1>MOCHII EDU</h1>
         <nav class="nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,10 +25,17 @@
     <main>
         <section class="container">
             <div class="equation">
-                <h1>1 + 1 = </h1>
-                <textarea id=eqn-ans style="width: 60px; height: 55px;"></textarea>
+                <h1 id="first-num">1</h1>
+                <h1 id=eqn-sign>+</h1>
+                <h1 id="second-num">1</h1>
+                <h1 id="equals">=</h1>
+                <h1>?</h1>
             </div>
-            <button id=submit-ans >Submit</button>
+            <div class="ans">
+                <h1 id="option1">1</h1>
+                <h1 id="option2">2</h1>
+                <h1 id="option3">3</h1>
+            </div>
         </section>
     </main>
     <script src="js/quizgame.js" async></script>
