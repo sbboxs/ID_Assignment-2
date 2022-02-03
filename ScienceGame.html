@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Bootstrap 4 CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/quizstyle.css">
+  <title>The Organ</title>
+</head>
+<body>
+  <header>
+        <h1>MOCHII EDU</h1>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Testimonials</a></li>
+                <li><a href="quizgame.html">Math Quiz</a></li>
+                <li><a href="ScienceGame.html">ScienceGame</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div class="container">
+    <h1 class="text-center">Guess The Organ</h1>
+    <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+    <div class="text-center">
+      <img id='organPic' src="images/img0.jpg" alt="">
+      <p>Organ Name:</p>
+      <p id="wordSpotlight">The word to be guessed goes here</p>
+      <div id="keyboard"></div>
+      <button class="btn btn-info" onClick="reset()">Reset</button>
+    </div> 
+  </div>
+
+<script src='js/HangTheScience.js'></script>
+</body>
+</html>
