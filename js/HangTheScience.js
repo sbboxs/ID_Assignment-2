@@ -47,7 +47,7 @@ function handleGuess(chosenLetter) {
 function updateOrganPicture() {
   index  = all_organ.indexOf(answer) ;
   console.log(index);
-  document.getElementById('organPic').src = './images/img'+index+'.jpg';
+  document.getElementById('organPic').src = './assets/img'+index+'.jpg';
 }
 
 function checkIfGameWon() {
