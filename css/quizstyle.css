@@ -4,7 +4,7 @@ main {
   margin: 0;
 }
 .game-container {
-  background-image: url(/assets/showcase.svg);
+  background-image: url(../assets/showcase.svg);
   padding-bottom: 15%;
 }
 .math-container {
@@ -56,3 +56,4 @@ main {
   background-color: white;
   color: tomato;
 }
+
