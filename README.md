@@ -1,4 +1,4 @@
-# ID Assignment 02: Mathematics Educational Web Application
+# ID Assignment 02: Mathematics Educational Web Application owo
 
 This project is a collaborative effort between 3 students to create a math-centered, educational web application for children, aged 6-12, to smoothly interact and play with. The website's purpose is to give children an alternative way to learn and enjoy mathematics through the use of simple games. The contents of the website will include a login page, a testimonial page and a few simple games such as Sudoku.
 
