@@ -45,7 +45,9 @@ function handleGuess(chosenLetter) {
 }
 
 function updateOrganPicture() {
-  document.getElementById('organPic').src = './images/' + 'img'+ all_organ.findIndex(answer) + '.jpg';
+  index  = all_organ.indexOf(answer) ;
+  console.log(index);
+  document.getElementById('organPic').src = './images/img'+index+'.jpg';
 }
 
 function checkIfGameWon() {
