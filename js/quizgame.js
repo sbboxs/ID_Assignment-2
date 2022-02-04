@@ -12,14 +12,22 @@ function createEqn(){
     let ansArray = [];
     let randomizeArray = [];
     let eqnArray = ['+', '-', 'X', '&#247'];
+    let multiplier = 255;
 
     const randomSign = eqnArray[Math.floor(Math.random() * eqnArray.length)];
     document.getElementById("eqn-sign").innerHTML = randomSign;
     if(randomSign == '+'){
         ans = num1 + num2;
     } else if(randomSign == '-'){
+        fakeNum1 = Math.floor(Math.random() * 31) - 15;
+        fakeNum2 = Math.floor(Math.random() * 31) - 15;
         ans = num1 - num2;
     } else if(randomSign == 'X'){
+        if (num1 > num2) multiplier = Math.pow(num1, 2);
+        else multiplier = Math.pow(num2, 2);
+
+        fakeNum1 = Math.floor(Math.random() * multiplier);
+        fakeNum2 = Math.floor(Math.random() * multiplier);
         ans = num1 * num2;
     } else if(randomSign == '&#247'){
         ans = num1 / num2;
@@ -28,20 +36,25 @@ function createEqn(){
         if (ans == fakeNum1){
             while (ans == fakeNum1){
                 fakeNum1 = Math.floor(Math.random() * 15);
+                console.log(fakeNum1);
             }
             while(fakeNum1 == fakeNum2){
                 fakeNum2 = Math.floor(Math.random() * 15);
+                console.log(fakeNum2);
             }
         } else if (ans == fakeNum2){
             while (ans == fakeNum2){
                 fakeNum2 = Math.floor(Math.random() * 15);
+                console.log(fakeNum2);
             }
             while (fakeNum1 == fakeNum2){
                 fakeNum1 = Math.floor(Math.random() * 15);
+                console.log(fakeNum1);
             }
         } else if (fakeNum1 == fakeNum2){
             while(fakeNum1 == fakeNum2){
                 fakeNum2 = Math.floor(Math.random() * 15);
+                console.log(fakeNum2);
             }
         }
     }
