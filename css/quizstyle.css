@@ -1,44 +1,17 @@
-* {
+main {
   font-family: "Luckiest Guy", cursive;
   padding: 0;
   margin: 0;
 }
-body {
-  background-color: rgb(196, 140, 248);
+.game-container {
+  background-image: url(/assets/showcase.svg);
+  padding-bottom: 15%;
 }
-header {
-  display: flex;
-  background-color: rgb(255, 168, 212);
-  padding: 20px;
-}
-header h1 {
-  color: white;
-  margin-left: 10%;
-}
-.nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-}
-li {
-  margin: 10px;
-  padding: 0 20px 0 20px;
-}
-.nav li a {
-  text-decoration: none;
-  color: blueviolet;
-}
-.nav li a:hover {
-  transition: 0.5s ease;
-  color: gray;
-  transform: scale(1.15);
-}
-.container {
+.math-container {
   display: grid;
   grid-template-columns: 80% 20%;
 }
 .equation {
-  font-size: 50px;
   background-color: white;
   text-align: center;
   padding-top: 15%;
@@ -50,9 +23,6 @@ li {
 .equation h1 {
   display: inline;
   padding: 10px;
-}
-.ans {
-  font-size: 50px;
 }
 .ans h1 {
   cursor: pointer;

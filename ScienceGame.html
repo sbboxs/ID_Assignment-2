@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:wght@700&family=Playfair+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
   <!-- Bootstrap 4 CDN -->
@@ -16,29 +17,68 @@
 </head>
 <body>
   <header>
-        <h1>MOCHII EDU</h1>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Testimonials</a></li>
-                <li><a href="quizgame.html">Math Quiz</a></li>
-                <li><a href="ScienceGame.html">ScienceGame</a></li>
-            </ul>
-        </nav>
-    </header>
-  <div class="container">
-    <h1 class="text-center">Guess The Organ</h1>
-    <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
-    <div class="text-center">
-      <img id='organPic' src="images/img0.jpg" alt="">
-      <p>Organ Name:</p>
-      <p id="wordSpotlight">The word to be guessed goes here</p>
-      <div id="keyboard"></div>
-      <button class="btn btn-info" onClick="reset()">Reset</button>
-    </div> 
-  </div>
+    <nav class="navbar navbar-expand-sm">
+      <div class="container">
+          <a href="#" class="navbar-brand">MOCHII EDU</a>
 
-<script src='js/HangTheScience.js'></script>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navmenu">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="about.html" class="nav-link">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="classes.html" class="nav-link">Classes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="testimonials.html" class="nav-link">Testimonials</a>
+                  </li>
+                  <li><a href="quizgame.html" class="nav-link">Math Quiz(temp) </a></li>
+                  <li><a href="ScienceGame.html" class="nav-link">ScienceGame(temp)</a></li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <button class="btn btn-primary">LogIn</button>  
+                  </li>
+                  <li class="nav-item">
+                      <button class="btn btn-primary">SignUp</button>
+                  </li>
+              </ul>
+          </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="game-container sci-container">
+      <h1 class="text-center">Guess The Organ</h1>
+      <div class="float-right">Wrong Guesses: <span id='mistakes'>0</span> of <span id='maxWrong'></span></div>
+      <div class="text-center">
+        <img id='organPic' src="images/img0.jpg" alt="">
+        <p>Organ Name:</p>
+        <p id="wordSpotlight">The word to be guessed goes here</p>
+        <div id="keyboard"></div>
+        <button class="btn btn-info" onClick="reset()">Reset</button>
+      </div> 
+    </div>
+  </main>
+  <!--Footer-->
+  <footer class="p-2 text-center position-relative">
+    <div class="container">
+        <a href="#" class="footer-link">Privacy Policy</a>
+        <a href="#" class="footer-link">Terms and Conditions</a>
+    </div>
+    <div class="container">
+        <span class="footer-copyright">Copyright &copy; 2022 MOCHII EDUCATION</span>
+    </div>
+  </footer>
+
+  <script src='js/HangTheScience.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

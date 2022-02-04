@@ -1,0 +1,70 @@
+body {
+  background-color: white;
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+/* navigation bar */
+.navbar {
+  background-color: white;
+}
+
+.nav-item {
+  padding: 0.8rem;
+}
+
+.navbar-brand {
+  color: black;
+}
+
+.nav-link {
+  color: black;
+}
+
+.nav-link:hover {
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 0.2em;
+}
+
+.nav-link:visted {
+  color: black;
+}
+
+.nav-item button {
+  background-color: #ffd1d1;
+  border-color: #ffd1d1;
+}
+
+.nav-item button:hover {
+  background-color: #ffd1d1;
+  border-color: #ffd1d1;
+  color: black;
+}
+
+/* footer */
+.footer-link {
+  padding: 0.5em;
+  font-size: 8pt;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  padding: 0.5em;
+  font-size: 8pt;
+  color: black;
+  text-decoration: underline;
+  text-decoration-color: black;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 0.2em;
+}
+
+.footer-link:visited {
+  color: black;
+}
+
+.footer-copyright {
+  color: #666;
+  font-size: 6pt;
+}
