@@ -33,7 +33,7 @@ function generateButtons() {
 function handleGuess(chosenLetter) {
   guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
   document.getElementById(chosenLetter).setAttribute('disabled', true);
-
+  //Maybe store the guessed word somewhere else?
   if (answer.indexOf(chosenLetter) >= 0) {
     guessedWord();
     checkIfGameWon();
