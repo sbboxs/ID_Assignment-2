@@ -17,11 +17,13 @@ function clearInputError(inputElement) {
     inputElement.parentElement.querySelector(".form__input-error-message").textContent = "";
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+$(document).ready(function () {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
     const APIKEY = "61d277b1ccd0211b320894cd";
+    console.log("help pls");
     //If create account, hidden login form and show login form
+    
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
         loginForm.classList.add("form--hidden");
@@ -33,13 +35,14 @@ document.addEventListener("DOMContentLoaded", () => {
         loginForm.classList.remove("form--hidden");
         createAccountForm.classList.add("form--hidden");
     });
+    
 
     //Login
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
         // Perform your AJAX/Fetch login
-        var settings = {
+        let settings = {
             "async": true,
             "crossDomain": true,
             "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
@@ -51,34 +54,41 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           }
           
-          $.ajax(settings).done(function (response) {
+        $.ajax(settings).done(function (response) {
             console.log(response);
-          });
+            
+        });
           
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
     //Create account
     createAccountForm.addEventListener("submit", e => {
         e.preventDefault();
-
+        
+        let userEmail = $("#signupEmailAddr").val();
+        let userName = $("#signupUsername").val();
+        let userPassword = $("#signupPassword").val();
         //Perform AJAX/Fetch
-        var jsondata = {"field1": "xyz","field2": "abc"};
-        var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
-        "method": "POST",
-        "headers": {
-            "content-type": "application/json",
-            "x-apikey": APIKEY,
-            "cache-control": "no-cache"
-        },
-        "processData": false,
-        "data": JSON.stringify(jsondata)
+        let jsondata = {"email": userEmail,"username": userName, "password": userPassword};
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
+            "method": "POST",
+            "headers": {
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": JSON.stringify(jsondata),
+            "beforeSend": function () { 
+                alert("success!");
+             }
         }
 
         $.ajax(settings).done(function (response) {
-        console.log(response);
+            console.log(response);
         });
     });
 
