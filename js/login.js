@@ -20,6 +20,7 @@ function clearInputError(inputElement) {
 document.addEventListener("DOMContentLoaded", () => {
     const loginForm = document.querySelector("#login");
     const createAccountForm = document.querySelector("#createAccount");
+    const APIKEY = "61d277b1ccd0211b320894cd";
     //If create account, hidden login form and show login form
     document.querySelector("#linkCreateAccount").addEventListener("click", e => {
         e.preventDefault();
@@ -33,12 +34,52 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
+    //Login
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
         // Perform your AJAX/Fetch login
-        
+        var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
+            "method": "GET",
+            "headers": {
+              "content-type": "application/json",
+              "x-apikey": APIKEY,
+              "cache-control": "no-cache"
+            }
+          }
+          
+          $.ajax(settings).done(function (response) {
+            console.log(response);
+          });
+          
         setFormMessage(loginForm, "error", "Invalid username/password combination");
+    });
+    //Create account
+    createAccountForm.addEventListener("submit", e => {
+        e.preventDefault();
+
+        //Perform AJAX/Fetch
+        var jsondata = {"field1": "xyz","field2": "abc"};
+        var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
+        "method": "POST",
+        "headers": {
+            "content-type": "application/json",
+            "x-apikey": APIKEY,
+            "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(jsondata)
+        }
+
+        $.ajax(settings).done(function (response) {
+        console.log(response);
+        });
     });
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
