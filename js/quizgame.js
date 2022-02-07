@@ -34,27 +34,16 @@ function createEqn(){
     }
     if (ans == fakeNum1 || ans == fakeNum2 || fakeNum1 == fakeNum2){
         if (ans == fakeNum1){
-            while (ans == fakeNum1){
+            while (ans == fakeNum1 || fakeNum1 == fakeNum2){
                 fakeNum1 = Math.floor(Math.random() * 15);
-                console.log(fakeNum1);
-            }
-            while(fakeNum1 == fakeNum2){
-                fakeNum2 = Math.floor(Math.random() * 15);
-                console.log(fakeNum2);
             }
         } else if (ans == fakeNum2){
-            while (ans == fakeNum2){
+            while (ans == fakeNum2 || fakeNum1 == fakeNum2){
                 fakeNum2 = Math.floor(Math.random() * 15);
-                console.log(fakeNum2);
-            }
-            while (fakeNum1 == fakeNum2){
-                fakeNum1 = Math.floor(Math.random() * 15);
-                console.log(fakeNum1);
             }
         } else if (fakeNum1 == fakeNum2){
-            while(fakeNum1 == fakeNum2){
+            while(fakeNum1 == fakeNum2 || ans == fakeNum2){
                 fakeNum2 = Math.floor(Math.random() * 15);
-                console.log(fakeNum2);
             }
         }
     }
@@ -62,6 +51,9 @@ function createEqn(){
     document.getElementById("second-num").innerHTML = num2;
 
     ansArray = [ans, fakeNum1, fakeNum2];
+    console.log(ans);
+    console.log(fakeNum1);
+    console.log(fakeNum2);
     while(randomizeArray.length != ansArray.length){
         let randomOption = ansArray[Math.floor(Math.random() * ansArray.length)];
         if (!randomizeArray.includes(randomOption)){
