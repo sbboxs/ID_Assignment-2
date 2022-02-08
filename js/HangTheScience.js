@@ -1,7 +1,11 @@
 var all_organ = [
-	"INTESTINE",
-	"LUNG",
-	"STOMACH"
+	"BRAIN",
+	"LIVER",
+	"BLADDER",
+  "KIDNEYS",
+  "HEART",
+  "STOMACH",
+  "INTESTINES"
 ]
 
 let answer = '';
