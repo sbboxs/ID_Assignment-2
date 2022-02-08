@@ -1,0 +1,31 @@
+.section-testimonials {
+    width: 100%;
+    height: auto;
+    background-color: pink;
+}
+
+.card {
+    max-height: 40vh;
+}
+
+.display-picture {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 75%;
+}
+
+.testimonial-selected-name {
+    font-size: 15pt;
+}
+
+.testimonial-selected-class {
+    font-size: 8pt;
+}
+
+.fa-star, .fa-star-half-alt {
+    color: #ffbf00;
+}
+
+.review-text {
+    font-size: 10pt;
+}
