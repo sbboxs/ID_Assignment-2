@@ -33,13 +33,12 @@ body {
 }
 
 .nav-item button {
-  background-color: #ffd1d1;
-  border-color: #ffd1d1;
+  background-color: #FFA2A2;
+  border: none;
 }
 
 .nav-item button:hover {
   background-color: #ffd1d1;
-  border-color: #ffd1d1;
   color: black;
 }
 
