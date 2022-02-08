@@ -6,7 +6,7 @@ $(document).ready(function () {
             url: 'login.html',
             dataType: 'text',
             success: function(data) {
-                $(".modal-content").html(data);
+                $(".modal-body").html(data);
                 $(".modal").modal("show");
             } 
         });
@@ -15,12 +15,11 @@ $(document).ready(function () {
         e.preventDefault();
 
         $.ajax({
-            url: 'login.html',
+            url: 'signup.html',
             dataType: 'text',
             success: function(data) {
-                $(".modal-content").html(data);
-                $("#login").addClass("form--hidden");
-                $("#createAccount").removeClass("form--hidden");
+                $(".modal-body").html(data);
+                $("#modal-title").text("Register");
                 $(".modal").modal("show");
             } 
         });

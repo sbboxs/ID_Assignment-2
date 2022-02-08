@@ -9,8 +9,6 @@
 }
 
 .login-container {
-  width: 400px;
-  max-width: 400px;
   padding: 2rem;
   border-radius: 4px;
   background: #ffffff;
@@ -88,11 +86,14 @@
   border-radius: 4px;
   outline: none;
   cursor: pointer;
-  background: #009579;
+  background-color: #ffd1d1;
+  border-color: #ffd1d1;
 }
 
 .form__button:hover {
-  background: #007f67;
+  background-color: #ffd1d1;
+  border-color: #ffd1d1;
+  color: black;
 }
 
 .form__button:active {
@@ -101,6 +102,8 @@
 
 .form__text {
   text-align: center;
+  font-size: 10pt;
+  cursor: pointer;
 }
 
 .form__link {
