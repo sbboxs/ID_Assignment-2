@@ -44,6 +44,8 @@
                     <li><a href="quizgame.html" class="nav-link">Math Quiz(temp) </a></li>
                     <li><a href="ScienceGame.html" class="nav-link">ScienceGame(temp)</a></li>
                     <li><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Open</a></li>
+                    <li><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Open1</a></li>
+
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -64,6 +66,80 @@
         </div>
     </section>
 
+        <!--Login Modal-->
+        <div class="modal fade bd-example-modal-lg text-center" id="loginModal" tabindex="-1" aria-labelledby="modal-title--login" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center w-100" id="modal-title--login">Login</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="login">
+                            <div class="form__message form__message--error"></div>
+                            <div class="my-4 form__input-group">
+                                <input type="text" class="form-control form__input" autofocus placeholder="Username or Email">
+                                <div class="form__input-error-message"></div>
+                            </div>
+                            <div class="my-4 form__input-group">
+                                <input type="password" class="form-control form__input" autofocus placeholder="Password">
+                                <div class="form__input-error-message"></div>
+                            </div>
+                            <div class="my-4 form__input-group">
+                                <button class="w-50 btn btn-primary form__button" id="loginAcc" type="submit">Login</button>
+                            </div>
+                            <div class="my-4 form__input-group">
+                                <p class="form__text">
+                                    <a class="form__link" id="linkCreateAccount">Don't have an account? Click here!</a>
+                                </p>
+                            </div>
+                    </form>
+                </div>
+                </div>
+            </div>
+        </div>
+    
+        <!--Register Modal-->
+        <div class="modal fade bd-example-modal-lg text-center" id="registerModal" tabindex="-1" aria-labelledby="modal-title--register" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title text-center w-100" id="modal-title--register">Register</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="createAccount">
+                            <div class="form__message form__message--error"></div>
+                            <div class="my-4 form__input-group">
+                                <input type="text" id="signupUsername" class="form-control form__input" autofocus placeholder="Username">
+                                <div class="form__input-error-message"></div>
+                            </div>
+                        <div class="my-4 form__input-group">
+                            <input type="text" id="signupEmailAddr" class="form-control form__input" autofocus placeholder="Email Address">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="my-4 form__input-group">
+                            <input type="password" id= "signupPassword" class="form-control form__input" autofocus placeholder="Password">
+                            <div class="form__input-error-message"></div>
+                        </div>
+                        <div class="my-4 form__input-group">
+                            <input type="password" id= "signupRePassword" class="form-control form__input" autofocus placeholder="Confirm Password">
+                            <div class="my-4 form__input-error-message"></div>
+                        </div>
+                        <div class="my-4 form__input-group">
+                            <button class="w-50 btn btn-primary form__button" id="createAcc" type="submit">Create Account</button>
+                        </div>
+                        <div class="my-4 form__input-group">
+                            <p class="form__text">
+                                <a class="form__link" id="linkLogin">Already have an account? Login here!</a>
+                            </p>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     <!--Footer-->
     <footer class="p-2 text-center position-relative">
         <div class="container">
@@ -74,41 +150,6 @@
             <span class="footer-copyright">Copyright &copy; 2022 MOCHII EDUCATION</span>
         </div>
     </footer>
-
-    <!--Login Modal-->
-    <div class="modal fade bd-example-modal-lg text-center" id="loginModal" tabindex="-1" aria-labelledby="modal-title--login" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-center">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title text-center w-100" id="modal-title--login">Login</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                    <div class="modal-body">
-                    <form id="login">
-                        <div class="form__message form__message--error"></div>
-                        <div class="my-4 form__input-group">
-                            <input type="text" class="form-control form__input" autofocus placeholder="Username or Email">
-                            <div class="form__input-error-message"></div>
-                        </div>
-                        <div class="my-4 form__input-group">
-                            <input type="password" class="form-control form__input" autofocus placeholder="Password">
-                            <div class="form__input-error-message"></div>
-                        </div>
-                        <div class="my-4 form__input-group">
-                            <button class="w-50 btn btn-primary form__button" id="loginAcc" type="submit">Login</button>
-                        </div>
-                        <div class="my-4 form__input-group">
-                            <p class="form__text">
-                                <a class="form__link" id="linkCreateAccount">Don't have an account? Click here!</a>
-                            </p>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Register Modal-->
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
