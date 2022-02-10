@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Bubblegum';
+  src: url(fonts/Bubblegum.ttf)
+}
+
 body {
   background-color: white;
-  font-family: "Mochiy Pop One", sans-serif;
+  font-family: "Bubblegum", sans-serif;
 }
 
 /* navigation bar */
@@ -33,7 +38,7 @@ body {
 }
 
 .nav-item button {
-  background-color: #ffa2a2;
+  background-color: #FFA2A2;
   border: none;
 }
 
@@ -90,4 +95,16 @@ body {
 :-moz-placeholder {
   /* Firefox 18- */
   font-size: 8pt;
+}
+
+.image-container {
+  width: 100%;
+  height: 90vh;
+  background-color: #666;
+  display: flex;
+  
+}
+
+.image-container img {
+  flex-shrink: 0;
 }
