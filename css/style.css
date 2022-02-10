@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Bubblegum';
-  src: url(fonts/Bubblegum.ttf)
+  src: url(fonts/Bubblegum.ttf) format('truetype');
 }
 
 body {
