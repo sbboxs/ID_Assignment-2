@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#login-btn").on("click", function(e){
+    $("#loginBtn").on("click", function(e){
         e.preventDefault();
 
         $.ajax({
@@ -11,7 +11,8 @@ $(document).ready(function () {
             } 
         });
     });
-    $("#signup-btn").on("click", function(e){
+
+    $("#registerBtn").on("click", function(e){
         e.preventDefault();
 
         $.ajax({
