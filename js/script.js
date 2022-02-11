@@ -28,3 +28,10 @@ $("#registerBtn").on("click", function (e) {
 document.getElementById("biologyBtn").onclick = function(){
     location.href = "biology.html";
 };
+
+document.getElementById("englishBtn").onclick = function(){
+    location.href = "english.html";
+};
+document.getElementById("wordleGame").onclick = function(){
+    location.href = "wordle.html";
+};

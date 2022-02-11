@@ -48,7 +48,6 @@ function handleGuess(chosenLetter) {
 
 function updateOrganPicture() {
   index = organ_list.indexOf(answer);
-  console.log(index);
   document.getElementById('organPic').src = '../assets/biology_assets/human-anatomy/' + index + '.png';
 }
 
