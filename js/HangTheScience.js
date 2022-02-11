@@ -1,4 +1,4 @@
-var all_organ = [
+var organ_list = [
   "BRAIN",
   "HEART",
   "INTESTINES",
@@ -13,7 +13,7 @@ let guessed = [];
 let wordStatus = null;
 
 function randomWord() {
-  answer = all_organ[Math.floor(Math.random() * all_organ.length)];
+  answer = organ_list[Math.floor(Math.random() * organ_list.length)];
   updateOrganPicture();
 }
 
@@ -47,9 +47,9 @@ function handleGuess(chosenLetter) {
 }
 
 function updateOrganPicture() {
-  index = all_organ.indexOf(answer);
+  index = organ_list.indexOf(answer);
   console.log(index);
-  document.getElementById('organPic').src = './assets/user_display_picture' + index + '.png';
+  document.getElementById('organPic').src = '../assets/biology_assets/human-anatomy/' + index + '.png';
 }
 
 function checkIfGameWon() {
