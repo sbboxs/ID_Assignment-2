@@ -1,11 +1,9 @@
 var all_organ = [
-	"BRAIN",
-	"LIVER",
-	"BLADDER",
-  "KIDNEYS",
+  "BRAIN",
   "HEART",
-  "STOMACH",
-  "INTESTINES"
+  "INTESTINES",
+  "LUNGS",
+  "STOMACH"
 ]
 
 let answer = '';
@@ -49,9 +47,9 @@ function handleGuess(chosenLetter) {
 }
 
 function updateOrganPicture() {
-  index  = all_organ.indexOf(answer) ;
+  index = all_organ.indexOf(answer);
   console.log(index);
-  document.getElementById('organPic').src = './assets/img'+index+'.jpg';
+  document.getElementById('organPic').src = './assets/user_display_picture' + index + '.png';
 }
 
 function checkIfGameWon() {
@@ -85,6 +83,7 @@ function reset() {
   updateMistakes();
   generateButtons();
 }
+
 document.getElementById('maxWrong').innerHTML = maxWrong;
 
 randomWord();

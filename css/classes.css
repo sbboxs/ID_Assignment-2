@@ -23,16 +23,15 @@
 }
 
 .learn-class {
+    color: white;
     border: 2px white solid;
-    display: none;
+    background: linear-gradient(to left, #FFA2A2 50%, #FFD1D1 50%);
+    background-size: 200% 100%;
+    background-position: bottom right;
+    transition: all .7s ease-out;
 }
 
 .learn-class:hover {
-    background-color:#FFA2A2;
-    color: white;
-}
-
-.card:hover .learn-class {
-    margin: 0 auto;
-    display: block;
+    color: black;
+    background-position: bottom left;    
 }

@@ -1,6 +1,6 @@
-
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
+
     messageElement.textContent = message;
     messageElement.classList.remove("form__message--success", "form__message--error");
     messageElement.classList.add(`form__message--${type}`);
@@ -11,17 +11,17 @@ $(document).ready(function () {
     const APIKEY = "61d277b1ccd0211b320894cd";
 
     //If create account, hidden login form and show login form
-    $("#linkCreateAccount").on("click", function(e){
+    $("#linkCreateAccount").on("click", function (e) {
         e.preventDefault();
 
         $.ajax({
-            url: 'signup.html',
+            url: 'register.html',
             dataType: 'text',
-            success: function(data) {
+            success: function (data) {
                 $(".modal-body").html(data);
                 $("#modal-title").text("Register");
                 $(".modal").modal("show");
-            } 
+            }
         });
     });
 
@@ -36,18 +36,33 @@ $(document).ready(function () {
             "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
             "method": "GET",
             "headers": {
-              "content-type": "application/json",
-              "x-apikey": APIKEY,
-              "cache-control": "no-cache"
+                "content-type": "application/json",
+                "x-apikey": APIKEY,
+                "cache-control": "no-cache"
             }
-          }
-          
+        }
+
         $.ajax(settings).done(function (response) {
             console.log(response);
-            
+            let loginUserName = $("#loginUserName").val();
+            let loginUserPass = $("#loginUserPass").val();
+            let status = false;
+
+            for (i = 0; i < response.length; i++) {
+                if (response[i].username == loginUserName && response[i].password == loginUserPass) {
+                    status = true;
+                    break;
+                }
+            }
+            if (status) {
+                setFormMessage(loginForm, "success", "Login successful");
+                $(".modal").modal("toggle");
+            }
+            else {
+                setFormMessage(loginForm, "error", "Invalid username/password combination");
+            }
+
         });
-          
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
 });
 
