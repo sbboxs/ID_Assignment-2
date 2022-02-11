@@ -1,0 +1,38 @@
+.section-classes {
+    width: 100%;
+    height: auto;
+    background-color: #FFD1D1;
+}
+
+.card {
+    height: 40vh;
+    border: 3px solid white;
+}
+
+.card-header {
+    background-color: #FFA2A2;
+}
+
+.card-body {
+    background-color: #FFEBEB;
+
+}
+
+.card-text {
+    color: #4C4646;
+}
+
+.learn-class {
+    border: 2px white solid;
+    display: none;
+}
+
+.learn-class:hover {
+    background-color:#FFA2A2;
+    color: white;
+}
+
+.card:hover .learn-class {
+    margin: 0 auto;
+    display: block;
+}
