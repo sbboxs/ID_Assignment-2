@@ -24,3 +24,7 @@ $("#registerBtn").on("click", function (e) {
         }
     });
 });
+
+document.getElementById("biologyBtn").onclick = function(){
+    location.href = "biology.html";
+};
