@@ -58,6 +58,7 @@ $(document).ready(function () {
                 setFormMessage(loginForm, "success", "Login successful");
                 sessionStorage.setItem('username', loginUserName)
                 $(".modal").modal("toggle");
+                location.reload();
             }
             else {
                 setFormMessage(loginForm, "error", "Invalid username/password combination");
