@@ -56,6 +56,7 @@ $(document).ready(function () {
             }
             if (status) {
                 setFormMessage(loginForm, "success", "Login successful");
+                sessionStorage.setItem('username', loginUserName)
                 $(".modal").modal("toggle");
             }
             else {

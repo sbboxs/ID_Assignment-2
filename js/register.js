@@ -74,8 +74,33 @@ $(document).ready(function () {
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             //If input does not pass validation, set and display the new error messaage
-            if (e.target.id === "signupUsername" && e.target.value.length > 0 && e.target.value.length < 8) {
-                setInputError(inputElement, "Username must be at least 8 characters in length");
+            if (e.target.id === "signupUsername"){
+                if(e.target.value.length > 0 && e.target.value.length < 8) {
+                    setInputError(inputElement, "Username must be at least 8 characters in length");
+                }
+
+                let settings = {
+                    "async": true,
+                    "crossDomain": true,
+                    "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
+                    "method": "GET",
+                    "headers": {
+                        "content-type": "application/json",
+                        "x-apikey": APIKEY,
+                        "cache-control": "no-cache"
+                    }
+                }
+        
+                $.ajax(settings).done(function (response) {
+                    console.log(response);
+        
+                    for (i = 0; i < response.length; i++) {
+                        if (response[i].username == e.target.value) {
+                            setInputError(inputElement, "Username already taken");
+                            break;
+                        }
+                    }
+                });
             }
             else if (e.target.id === "signupEmailAddr") {
                 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) {
