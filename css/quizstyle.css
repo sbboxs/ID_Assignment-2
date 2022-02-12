@@ -12,6 +12,7 @@ main {
   grid-template-columns: 80% 20%;
 }
 .equation {
+  position: relative;
   background-color: white;
   text-align: center;
   padding-top: 15%;
@@ -31,6 +32,20 @@ main {
   border-radius: 5px;
   margin-top: 10px;
   margin-right: 12px;
+}
+#scoreboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.lives-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.hearts {
+  height: 2rem;
+  width: 2rem;
 }
 #option1 {
   background-color: red;
@@ -56,4 +71,3 @@ main {
   background-color: white;
   color: tomato;
 }
-

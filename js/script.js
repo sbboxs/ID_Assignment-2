@@ -32,6 +32,11 @@ document.getElementById("biologyBtn").onclick = function(){
 document.getElementById("englishBtn").onclick = function(){
     location.href = "english.html";
 };
+
 document.getElementById("wordleGame").onclick = function(){
     location.href = "wordle.html";
+};
+
+document.getElementById("mathBtn").onclick = function(){
+    location.href = "mathematics.html";
 };

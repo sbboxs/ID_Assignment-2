@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Bubblegum';
-  src: url(fonts/Bubblegum.ttf) format('truetype');
+  font-family: "Bubblegum";
+  src: url(/fonts/Bubblegum.ttf) format("truetype");
 }
 
 body {
@@ -21,7 +21,6 @@ body {
   color: black;
 }
 
-
 .nav-link {
   color: black !important;
   font-size: 1em;
@@ -40,12 +39,12 @@ body {
 }
 
 .nav-item button {
-  background-color: #FFA2A2;
+  background-color: #ffa2a2;
   border: none;
 }
 
 .nav-item button:hover {
-  background-color: #FFD1D1;
+  background-color: #ffd1d1;
   color: black;
 }
 

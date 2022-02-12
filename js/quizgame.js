@@ -3,6 +3,10 @@ const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
 const eqnSign = document.getElementById("eqn-sign");
 let ans = 0;
+let count = 0;
+const live1 = document.getElementById("live1");
+const live2 = document.getElementById("live2");
+const live3 = document.getElementById("live3");
 
 function createEqn(){
     let num1 = Math.floor(Math.random() * 15);
@@ -71,12 +75,20 @@ function createEqn(){
             if(randomSign == '+' || randomSign == '&#247'){
                 fakeNum1 = Math.floor(Math.random() * 15);
                 fakeNum2 = Math.floor(Math.random() * 15);
+                console.log("divide or add");
             } else if(randomSign == '-'){
                 fakeNum1 = Math.floor(Math.random() * 31) - 15;
                 fakeNum2 = Math.floor(Math.random() * 31) - 15;
+                console.log("subtract");
             } else if(randomSign == 'X'){
                 fakeNum1 = Math.floor(Math.random() * multiplier);
-                fakeNum2 = Math.floor(Math.random() * multiplier); 
+                fakeNum2 = Math.floor(Math.random() * multiplier);
+                console.log(multiplier + " this is multiplier");
+                if (multiplier == 0 || multiplier == 1){
+                    fakeNum1 = Math.floor(Math.random() * 15);
+                    fakeNum2 = Math.floor(Math.random() * 15);
+                }
+                console.log("multiply");
             }
             console.log(fakeNum1);
             console.log(fakeNum2);
@@ -108,19 +120,59 @@ function createEqn(){
     document.getElementById("option2").innerHTML = randomizeArray[1];
     document.getElementById("option3").innerHTML = randomizeArray[2];
 }
+function EndQuiz() {
+    $(".modal-content").html(`
+    <button type="button" class="btn-close" id="quizModal" data-bs-dismiss="modal" aria-label="Close" style="float:right;"></button>
+    <h1 class="my-4 text-center" style="font-family:Luckiest Guy, cursive;">Well Done!</h1>
+    <h1 class="my-4 text-center" style="font-family:Luckiest Guy, cursive;">You got <span id="scorePoints" style="color:pink;"></span> pts</h1>`);
+    $("#scorePoints").text(count);
+    $(".modal").modal("toggle");
+    
+    $("#quizModal").on("click", function(){
+        location.reload();
+    })
+    $(".modal").on('hidden.bs.modal', function() {
+        location.reload();
+    })
+    
+}
 option1.addEventListener("click", function(){
     if(option1.innerHTML == ans){
+        count += 1;
+        $("#scoreCount").text(count);
         createEqn();
+    }
+    else {
+        $(".lives-container").children().last().remove();
+        if($(".lives-container").is(":empty")) {
+            EndQuiz();
+        }
     }
 });
 option2.addEventListener("click", function(){
     if(option2.innerHTML == ans){
+        count += 1;
+        $("#scoreCount").text(count);
         createEqn();
+    }
+    else {
+        $(".lives-container").children().last().remove();
+        if($(".lives-container").is(":empty")) {
+            EndQuiz();
+        }
     }
 });
 option3.addEventListener("click", function(){
     if(option3.innerHTML == ans){
+        count += 1;
+        $("#scoreCount").text(count);
         createEqn();
+    }
+    else {
+        $(".lives-container").children().last().remove();
+        if($(".lives-container").is(":empty")) {
+            EndQuiz();
+        }
     }
 });
 

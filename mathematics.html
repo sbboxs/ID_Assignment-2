@@ -18,8 +18,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:wght@700&family=Playfair+Display&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
 
     <title>MOCHII EDU</title>
 </head>
@@ -51,90 +49,58 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <button class="btn btn-primary" id="loginBtn">LogIn</button>
+                        <button class="btn btn-primary" id="login-btn">LogIn</button>
+                        <!-- <button class="btn btn-primary">LogIn</button>   -->
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-primary" id="registerBtn">Register</button>
+                        <button class="btn btn-primary" id="signup-btn">SignUp</button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!--Classes-->
+    <!--Showcase-->
     <section class="section-classes">
         <div class="container text-center">
             <div class="py-5 container-header">
-                <h2 class="container-title">Classes</h2>
-                <p class="container-description">What should we learn today? o w o</p>
+                <h2 class="container-title">Mathematics Class</h2>
+                <p class="container-description">Try Practice or Timed mode!</p>
             </div>
         </div>
         <div class="container">
             <div class="row">
+                <div class="col-lg-3 mb-3"></div>
                 <div class="col-lg-3 mb-3">
                     <div class="card">
-                        <div class="card-header text-center p-4">English</div>
+                        <div class="card-header text-center p-4">Practice</div>
                         <div class="card-body p-4">
                             <div class="h-75">
-                                <p class="card-text">Story</p>
-                                <p class="card-text">Wordle</p>
-                                <p class="card-text">Advanced</p>
+                                <p class="card-text">Practice your 4 basic operators of Addition, Subtraction, Multiplication and Division in this Math Quiz Game.</p>
                             </div>
                             <div class="text-center">
-                                <button class="btn w-75 learn-class" id="englishBtn">Learn</button>
+                                <button class="btn w-75 learn-class" id="#">Start Learning</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 mb-3">
                     <div class="card">
-                        <div class="card-header text-center p-4">Mathematics</div>
+                        <div class="card-header text-center p-4">Timed</div>
                         <div class="card-body p-4">
                             <div class="h-75">
-                                <p class="card-text">Practice</p>
-                                <p class="card-text">Timed</p>
+                                <p class="card-text">Test your maths skills by racing against to clock to score the highest amount of points in 60 seconds.</p>
                             </div>
                             <div class="text-center">
-                                <button class="btn w-75 learn-class" id="mathBtn">Learn</button>
+                                <button class="btn w-75 learn-class" id="#">Start Learning</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 mb-3">
-                    <div class="card">
-                        <div class="card-header text-center p-4">Biology</div>
-                        <div class="card-body p-4">
-                            <div class="h-75">
-                                <p class="card-text">Humam anatomy</p>
-                                <p class="card-text">Blood</p>
-                                <p class="card-text">Animal cell</p>
-                                <p class="card-text">Plant cell</p>
-                            </div>
-                            <div class="text-center">
-                                <button class="btn w-75 learn-class"  id="biologyBtn">Learn</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-3">
-                    <div class="card">
-                        <div class="card-header text-center p-4">Coming Soon</div>
-                        <div class="card-body p-4">
-                            <div class="h-75">
-                                <p class="card-text">Basics</p>
-                                <p class="card-text">Intermediate</p>
-                                <p class="card-text">Advanced</p>
-                            </div>
-                            <div class="text-center">
-                                <button class="btn w-75 learn-class" id="#">Coming Soon</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-lg-3 mb-3"></div>
             </div>
         </div>
     </section>
-
     <!--Footer-->
     <footer class="p-2 text-center position-relative">
         <div class="container">
@@ -146,18 +112,35 @@
         </div>
     </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <script src="/js/script.js" async></script>
+    <!--Login/SignUp-->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-center" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center w-100" id="modal-title">Login</h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+        <script src="/js/script.js" async></script>
 </body>
 
 </html>
