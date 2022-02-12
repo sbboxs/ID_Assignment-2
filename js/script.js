@@ -59,8 +59,8 @@ if (document.getElementById("mathPracticeBtn") != null){
     };
 }
 
-/* needs fixing
-document.getElementById("wordleGame").onclick = function(){
-    location.href = "wordle.html";
-};
-*/
+if (document.getElementById("wordleGameBtn") != null){
+    document.getElementById("wordleGameBtn").onclick = function() {
+        location.href = "wordle.html";
+    };
+}
