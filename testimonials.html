@@ -18,7 +18,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Montserrat:wght@700&family=Playfair+Display&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 
@@ -30,7 +29,9 @@
     <!--Navigation Bar-->
     <nav class="navbar navbar-expand-sm">
         <div class="container">
-            <a href="#" class="navbar-brand">MOCHII EDU</a>
+            <a href="#" class="navbar-brand">
+                <img src="assets/index_assets/fgfgs.svg" class="w-50 brand-image img-responsive">
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
@@ -72,7 +73,7 @@
             </div>
         </div>
         <div class="container">
-            <div class="row">
+            <div class="row testimonial-list">
                 <div class="col-lg-4 mb-3">
                     <div class="card border-0">
                         <div class="d-flex p-3 just-content-start align-items-center">
@@ -217,7 +218,23 @@
         </div>
     </footer>
 
+    <!--Login/Register Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-center" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title text-center w-100" id="modal-title"></h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+            </div>
+        </div>
     <!-- Optional JavaScript -->
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/v4-shims.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -229,6 +246,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="/js/script.js" async></script>
+    <script src="/js/testimonial.js" async></script>
 </body>
 
 </html>
