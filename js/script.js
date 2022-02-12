@@ -33,10 +33,11 @@ document.getElementById("englishBtn").onclick = function(){
     location.href = "english.html";
 };
 
-document.getElementById("wordleGame").onclick = function(){
-    location.href = "wordle.html";
-};
-
 document.getElementById("mathBtn").onclick = function(){
     location.href = "mathematics.html";
 };
+/* needs fixing
+document.getElementById("wordleGame").onclick = function(){
+    location.href = "wordle.html";
+};
+*/
