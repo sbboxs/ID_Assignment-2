@@ -25,6 +25,9 @@ $(document).ready(function () {
                 $(".modal-body").html(data);
                 $("#modal-title").text("Login");
                 $(".modal").modal("show");
+                if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
+                    $(".other-pgs-styles").attr("href", "css/classes.css");
+                }
             }
         });
     });
@@ -77,6 +80,8 @@ $(document).ready(function () {
             if (e.target.id === "signupUsername"){
                 if(e.target.value.length > 0 && e.target.value.length < 8) {
                     setInputError(inputElement, "Username must be at least 8 characters in length");
+                } else {
+                    setInputError(inputElement, "Please enter a username");
                 }
 
                 let settings = {
@@ -116,7 +121,7 @@ $(document).ready(function () {
                     }
                 }
                 else {
-                    setInputError(inputElement, "Password must be at least 5 characters in length");
+                    setInputError(inputElement, "Password must be at least 8 characters in length");
                 }
             }
             else if (e.target.id === "signupRePassword") {
