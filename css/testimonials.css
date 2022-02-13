@@ -1,34 +1,61 @@
-.section-testimonials {
-    width: 100%;
-    height: auto;
-    background-color: #FFD1D1;
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
-.card {
-    max-height: 40vh;
+.section-testimonials {
+  width: 100%;
+  height: auto;
+  background-color: #ffd1d1;
+}
+
+.card-shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 .display-picture {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 75%;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 75%;
 }
 
 .testimonial-selected-name {
-    font-size: 15pt;
+  font-size: 15pt;
 }
 
 .testimonial-selected-class {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bolder;
-    font-size: 8pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: 8pt;
 }
 
-.fa-star, .fa-star-half-alt {
-    color: #ffbf00;
+.fa-star,
+.fa-star-half-alt {
+  color: #ffbf00;
 }
 
 .review-text {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 10pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 10pt;
 }
