@@ -97,14 +97,22 @@ function intialize() {
     // Reset the game board
     document.getElementById("board").innerHTML = "";
     // Create the game board
+    var tilecounter = 0;
     for (let r = 0; r < height; r++) {
         for (let c = 0; c < width; c++) {
+            //<div>
             // <span id="0-0" class="tile">P</span>
+            //</div>
+            tilecounter+=1;
+            var newDiv = document.createElement("div");
+            newDiv.id = tilecounter;
+            newDiv.classList.add("container-tile");
+            document.getElementById("board").appendChild(newDiv);
             let tile = document.createElement("span");
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
             tile.innerText = "";
-            document.getElementById("board").appendChild(tile);
+            document.getElementById(tilecounter).appendChild(tile);
         }
     }
     
@@ -208,4 +216,31 @@ function update() {
             }
         }
     }
+    fetch("https://random-words5.p.rapidapi.com/getMultipleRandom?count=5", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "random-words5.p.rapidapi.com",
+		"x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
+	}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
+    
+fetch(`https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=${word.toLowerCase()}`, {
+"method": "GET",
+"headers": {
+    "x-rapidapi-host": "dictionary-by-api-ninjas.p.rapidapi.com",
+    "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
+}
+})
+.then(response => {
+	console.log(response);
+})
+.catch(err => {
+	console.error(err);
+});
 }
