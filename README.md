@@ -54,21 +54,44 @@ This section covers the testing of features and their intended output when a use
 
    _To be completed_
 
-2. Games:
+2. Classes:
+
+   1) Wordle:
+      Users are prompted to guess a 5 letter word and a definition of the word will be given. The user can either input the letter using the in-game keyboard or using their own keyboard device. If the user press enters when the 5 tile in the row is not completely filled, the user will not proceed and a message will show to tell user must enter 5 letters. 
+      If the user inputs 5 letters and press enter, if the 5 letters do not recognise as a valid word, the user will also not proceed and a message will show to tell user must enter a valid word.
+      If the user input a valid guess word, if the guess letters in the guess word are in the same position as the word, the tile will be green. If the guessed letter is in the word but not in the same position, the tile will be yellow. If the guessed letter is not in the word, the tile will be grey.
+      if the guess word is the same as the word, the user will win the game.
+
+   2) Science game:
+       In the science game, there are 5 different topics, and the different topics will have different type of pictures for the user to guess. The user is prompted to guess the name of the picture using in-game keyboard. The user has a total of 6 chances to make a mistake. If a letter is guessed, the letter will not be able to press again. If the letter guessed is in the name of the picture, the letter will show in the exact same position as the letter in the name. Moreover, there is a reset button, upon pressing the game will reset and a new picture will show.
+
+   3) Math game:
+
+      Practice math game:
+      In practice math, game users are given an equation but the answer of it will not be shown. On the right of the equation there is 3 answers for the user to choose but only 1 answer is the correct answer and user only have allow to make up to 3 wrong answer.Every right answer is make, the user will be award 1 points. Every wrong answer made, one out of the 3 hearts which represent chances of mistake make left will dissapear. When, the 3 hearts / 3 wrong answer, the game will ended. When game is ended, the total points score will be shown.
+
+      Timed math game:
+      --Not done yet--
+3. Testimonials:
 
    _To be completed_
 
-3. Learning Materials:
+4. Login & Register:
 
-   _To be completed_
+   Login: When the user pressed the login button, a login form will pop up. In the login, form users are prompted to input their username and password. After they press the login button in the form, they will log in to the website. If the username is not found or the password is unmatched and for security purposes, only an error message "Invalid username/password combination" will be shown. Moreover, if the user in the login form does not have an account, they are also allowed to proceed to the registration form via clicking the "Don't have an account? Click here!"
 
-4. Testimonials:
+   Register: When the user presses the register button, the registration form will pop up. In the register form, users are prompted to input the username, email addresses, password and confirm the password. 
+   .For username, if the username entered is less than 8 characters in length, an error message will show and only the error message only will clear after the user input meets the requirement.
+   .For email address, if the email address entered is not a valid one, an error message will show and only the error message only will clear after the user input meets the requirement.
+   .For password, if the password does not have at least 8 char in length or does not consist of at least a capital letter and a number, an error message will show and only the error message only will clear after the user input meets the requirement.
+   . To confirm a password, if the input in confirms password does not meet the input in password, an error message will show and only the error message only will clear after the user input meets the requirement.
 
-   _To be completed_
+   If there is an error, the user will not proceed to the next stage and the account will not create after user press "create account" button.
+   If all input meets the requirement, after the user presses the "create account" button, the registration form will close and a Lottie animation will be shown and tell the user account created successfully.
 
-5. Login:
+   If the user in the registration form has an account, they can press the "Already have an account? log in here!" button to proceed with the login form.
 
-   _To be completed_
+
 
 ### Display
 
@@ -79,14 +102,17 @@ _To be completed_
 _To be completed_
 
 ## Credits
+1) For the wordle game, we received inspiration from YouTuber, Kenny Yip Coding'video. Link to the video: https://www.youtube.com/watch?v=ckjRsPaWHX8
+2) For the science game, we received inspiration from YouTuber, Science and Technology'video. Link to the video: https://www.youtube.com/watch?v=dgvyE1sJS3Y### 
+
+
 
 ### Content
-
 - The design and layout of the website were inspired by [Educandy](https://www.educandy.com/) and [IXL](https://sg.ixl.com/)
 
 ### Media
 
-The photos used in this site were obtained from:
+The photos used in this site were obtained from 
 
 _To be completed_
 

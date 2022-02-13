@@ -1,4 +1,8 @@
-
+section {
+    width:100%;
+    height:auto;
+    background-color: #f5d6e7;
+}
 
 #title {
     text-align: center;
@@ -16,12 +20,10 @@
     flex-wrap: wrap;
 }
 
-.wordle-button{
-}
 
 .tile {
     /* Box */
-    border: 2px solid rgb(248, 11, 217);
+    border: 3px solid rgb(248, 11, 217);
     width: 60px;
     height: 60px;
     margin: 2.5px;
