@@ -3,7 +3,7 @@ var width = 5; //length of the word
 
 var row = 0; //current guess (attempt #)
 var col = 0; //current letter for that attempt
-var word = "BERRY";
+var word;
 var gameOver = false;
 let wordcount = 0;
 var validationStatus;
@@ -59,15 +59,18 @@ function randomWordGenerator(){
     const settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://random-words5.p.rapidapi.com/getMultipleRandom?count=5",
+        "url": "https://random-words5.p.rapidapi.com/getRandom?wordLength=5",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "random-words5.p.rapidapi.com",
             "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
         }
     };
+    
     $.ajax(settings).done(function (response) {
         console.log(response);
+        word = response.toUpperCase();
+        console.log(word);
     });
 }
 //Word dictionary
@@ -179,7 +182,6 @@ function intialize() {
                 guessWord = guessWordGetter();
                 console.log(guessWord);
                 wordDictionaryCheck(guessWord)
-                
             }
             else{
                 console.warn("Must enter 5 letter");
