@@ -36,6 +36,9 @@ $("#loginBtn").on("click", function (e) {
             $(".modal-body").html(data);
             $("#modal-title").text("Login");
             $(".modal").modal("show");
+            if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
+                $(".other-pgs-styles").attr("href", "css/classes.css");
+            }
         }
     });
 });
@@ -49,6 +52,9 @@ $("#registerBtn").on("click", function (e) {
             $(".modal-body").html(data);
             $("#modal-title").text("Register");
             $(".modal").modal("show");
+            if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
+                $(".other-pgs-styles").attr("href", "css/classes.css");
+            }
         }
     });
 });
