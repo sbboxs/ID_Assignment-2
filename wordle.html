@@ -70,10 +70,10 @@
               <h1 id="title">Wordle</h1>
             </div>
             <div class="text-center">
-              <button class="btn m-1" id="difficulty1">Level 1</button>
-              <button class="btn m-1" id="difficulty2">Level 2</button>
-              <button class="btn m-1" id="difficulty3">Level 3</button>
-              <button class="btn m-1" id="wordle-reset">Reset</button>
+              <button class="btn m-1 wordle-button" id="difficulty1">Easy</button>
+              <button class="btn m-1 wordle-button" id="difficulty2">Intermediate</button>
+              <button class="btn m-1 wordle-button" id="difficulty3">Insane</button>
+              <button class="btn m-1 wordle-button" id="definition">Definition</button>
             </div>
             <div class="row">
               <div class="col-md-sm" id="board">
@@ -87,48 +87,57 @@
             </div>
             <div id="keyboard-container text-center">
                 <div class="keyboard-row">
-                  <button class="keyboard-button" data-key="q">q</button>
-                  <button class="keyboard-button" data-key="w">w</button>
-                  <button class="keyboard-button" data-key="e">e</button>
-                  <button class="keyboard-button" data-key="r">r</button>
-                  <button class="keyboard-button" data-key="t">t</button>
-                  <button class="keyboard-button" data-key="y">y</button>
-                  <button class="keyboard-button" data-key="u">u</button>
-                  <button class="keyboard-button" data-key="i">i</button>
-                  <button class="keyboard-button" data-key="o">o</button>
-                  <button class="keyboard-button" data-key="p">p</button>
+                  <button class="keyboard-button" id="q" data-key="q">q</button>
+                  <button class="keyboard-button" id="w" data-key="w">w</button>
+                  <button class="keyboard-button" id="e" data-key="e">e</button>
+                  <button class="keyboard-button" id="r" data-key="r">r</button>
+                  <button class="keyboard-button" id="t" data-key="t">t</button>
+                  <button class="keyboard-button" id="y" data-key="y">y</button>
+                  <button class="keyboard-button" id="u" data-key="u">u</button>
+                  <button class="keyboard-button" id="i" data-key="i">i</button>
+                  <button class="keyboard-button" id="o" data-key="o">o</button>
+                  <button class="keyboard-button" id="p" data-key="p">p</button>
                 </div>
                 <div class="keyboard-row">
                   <div class="spacer-half"></div>
-                  <button class="keyboard-button" data-key="a">a</button>
-                  <button class="keyboard-button" data-key="s">s</button>
-                  <button class="keyboard-button" data-key="d">d</button>
-                  <button class="keyboard-button" data-key="f">f</button>
-                  <button class="keyboard-button" data-key="g">g</button>
-                  <button class="keyboard-button" data-key="h">h</button>
-                  <button class="keyboard-button" data-key="j">j</button>
-                  <button class="keyboard-button" data-key="k">k</button>
-                  <button class="keyboard-button" data-key="l">l</button>
+                  <button class="keyboard-button" id="a" data-key="a">a</button>
+                  <button class="keyboard-button" id="s" data-key="s">s</button>
+                  <button class="keyboard-button" id="d" data-key="d">d</button>
+                  <button class="keyboard-button" id="f" data-key="f">f</button>
+                  <button class="keyboard-button" id="g" data-key="g">g</button>
+                  <button class="keyboard-button" id="h" data-key="h">h</button>
+                  <button class="keyboard-button" id="j" data-key="j">j</button>
+                  <button class="keyboard-button" id="k" data-key="k">k</button>
+                  <button class="keyboard-button" id="l" data-key="l">l</button>
                   <div class="spacer-half"></div>
                 </div>
       
                 <div class="keyboard-row">
-                  <button class="keyboard-button" data-key="enter" class="wide-button">Enter</button>
-                  <button class="keyboard-button" data-key="z">z</button>
-                  <button class="keyboard-button" data-key="x">x</button>
-                  <button class="keyboard-button" data-key="c">c</button>
-                  <button class="keyboard-button" data-key="v">v</button>
-                  <button class="keyboard-button" data-key="b">b</button>
-                  <button class="keyboard-button" data-key="n">n</button>
-                  <button class="keyboard-button" data-key="m">m</button>
-                  <button class="keyboard-button" data-key="del" class="wide-button">DEL</button>
+                  <button class="keyboard-button" id="enter" data-key="enter" class="wide-button">Enter</button>
+                  <button class="keyboard-button" id="z" data-key="z">z</button>
+                  <button class="keyboard-button" id="x" data-key="x">x</button>
+                  <button class="keyboard-button" id="c" data-key="c">c</button>
+                  <button class="keyboard-button" id="v" data-key="v">v</button>
+                  <button class="keyboard-button" id="b" data-key="b">b</button>
+                  <button class="keyboard-button" id="n" data-key="n">n</button>
+                  <button class="keyboard-button" id="m" data-key="m">m</button>
+                  <button class="keyboard-button" id="del" data-key="del" class="wide-button">DEL</button>
                 </div>
               </div>
             </div>
           </div>
         </section>
     </body>
-
+     <!--Footer-->
+     <footer class="p-2 text-center position-relative">
+      <div class="container">
+          <a href="#" class="footer-link">Privacy Policy</a>
+          <a href="#" class="footer-link">Terms and Conditions</a>
+      </div>
+      <div class="container">
+          <span class="footer-copyright">Copyright &copy; 2022 MOCHII EDUCATION</span>
+      </div>
+  </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -141,4 +150,5 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="/js/wordle.js"></script>
+    <script src="/js/script.js" async></script>
 </html>

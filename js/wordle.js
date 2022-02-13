@@ -3,10 +3,12 @@ var width = 5; //length of the word
 
 var row = 0; //current guess (attempt #)
 var col = 0; //current letter for that attempt
-var word;
+var word;//word to be guess
+var wordDefinition; //defination of the word
 var gameOver = false;
 let wordcount = 0;
-var validationStatus;
+var validationStatus;//check for validation true/false
+var gameStatus = 0;
 // //Select difficulty
 // document.getElementById("difficulty1").onclick = function(){
 //     var wordListLevel1 = [
@@ -68,13 +70,14 @@ function randomWordGenerator(){
     };
     
     $.ajax(settings).done(function (response) {
-        console.log(response);
         word = response.toUpperCase();
         console.log(word);
+        wordDictionaryCheck(word);
     });
+    
 }
 //Word dictionary
-async function wordDictionaryCheck(guessWord){
+function wordDictionaryCheck(guessWord){
     const settings = {
         "async": true,
         "crossDomain": true,
@@ -85,22 +88,30 @@ async function wordDictionaryCheck(guessWord){
             "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
         }
     };
-    
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-        if (response.valid == true){
-            console.log(response.definition);// Get definition of the word
-            validationStatus = true;
-            console.log(validationStatus);
-            checkValidationStatus();   
-        }
-        
-        else if(response.valid == false){
-            validationStatus = false;
-            console.log(validationStatus);
-            checkValidationStatus();   
-        }
-    });
+    if (gameStatus == 0){
+        $.ajax(settings).done(function (response) {
+            if (gameStatus == 0 ){
+                wordDefinition = response.definition;//Get the definition of the word
+                console.log(wordDefinition);
+                gameStatus = 1;
+            }
+        })
+    }
+    else{
+        $.ajax(settings).done(function (response) {
+            if (response.valid == true){
+                validationStatus = true;
+                console.log(validationStatus);
+                checkValidationStatus();   
+            }
+            
+            else if(response.valid == false){
+                validationStatus = false;
+                console.log(validationStatus);
+                checkValidationStatus();   
+            }
+        })
+    }
 }
 
 //Combine letter into word
@@ -209,8 +220,6 @@ function addKeyboardClicks() {
                     currentTile.innerText = key.toUpperCase();
                     col += 1;
                     wordcount += 1;
-                    console.log(wordcount);
-                    console.log(key);
                 }
             }
         }
@@ -256,9 +265,21 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currentTile.innerText;
-
+        let currentKey = document.getElementById(letter.toLowerCase());
+        console.log(currentKey);
         //Is it in the correct position?
         if (word[c] == letter) {
+            if (currentKey.classList.contains("present")){
+                currentKey.classList.remove("present");
+                currentTile.classList.remove("present");
+                console.log("remove1");
+            }
+            else if (currentKey.classList.contains("absent")){
+                currentKey.classList.remove("absent");
+                currentTile.classList.remove("absent");
+                console.log("remove2");
+            }
+            currentKey.classList.add("correct");
             currentTile.classList.add("correct");
             correct += 1;
             letterCount[letter] -= 1; //deduct the letter count
@@ -274,14 +295,17 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currentTile.innerText;
+        let currentKey = document.getElementById(letter.toLowerCase());
         // skip the letter if it has been marked correct
         if (!currentTile.classList.contains("correct")) {
             //Is it in the word?         //make sure don't double count
             if (word.includes(letter) && letterCount[letter] > 0) {
                 currentTile.classList.add("present");
+                currentKey.classList.add("present");  
                 letterCount[letter] -= 1;
             } // Not in the word or (was in word but letters all used up to avoid overcount)
             else {
+                currentKey.classList.add("absent");
                 currentTile.classList.add("absent");
             }
         }
