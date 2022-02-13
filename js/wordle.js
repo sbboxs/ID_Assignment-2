@@ -6,6 +6,7 @@ var col = 0; //current letter for that attempt
 var word = "BERRY";
 var gameOver = false;
 let wordcount = 0;
+var validationStatus;
 // //Select difficulty
 // document.getElementById("difficulty1").onclick = function(){
 //     var wordListLevel1 = [
@@ -48,51 +49,81 @@ let wordcount = 0;
 // };
 
 window.onload = function(){
+    randomWordGenerator();
     intialize();
     addKeyboardClicks();
 }
-//In game Keyboard
-function addKeyboardClicks() {
-    const keys = document.querySelectorAll(".keyboard-row button");
-    for (let i = 0; i < keys.length; i++) {
-    keys[i].addEventListener("click", ({ target }) => {
-    const key = target.getAttribute("data-key");
+
+//Random word generator
+function randomWordGenerator(){
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://random-words5.p.rapidapi.com/getMultipleRandom?count=5",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "random-words5.p.rapidapi.com",
+            "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
+        }
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+}
+//Word dictionary
+async function wordDictionaryCheck(guessWord){
+    const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=${guessWord}`,
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "dictionary-by-api-ninjas.p.rapidapi.com",
+            "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
+        }
+    };
     
-        if (key !== "enter" && key !== "del"){
-            if (col < width) {
-                let currentTile = document.getElementById(row.toString() + '-' + col.toString());
-                if (currentTile.innerText == "") {
-                    currentTile.innerText = key.toUpperCase();
-                    col += 1;
-                    wordcount += 1;
-                    console.log(wordcount);
-                    console.log(key);
-                }
-            }
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+        if (response.valid == true){
+            console.log(response.definition);// Get definition of the word
+            validationStatus = true;
+            console.log(validationStatus);
+            checkValidationStatus();   
         }
-        else if (key =="del"){
-            if (0 < col && col <= width) {
-                col -=1;
-            }
-            let currentTile = document.getElementById(row.toString() + '-' + col.toString());
-            currentTile.innerText = "";
-            if(wordcount > 0) {
-                wordcount -= 1;
-            }
+        
+        else if(response.valid == false){
+            validationStatus = false;
+            console.log(validationStatus);
+            checkValidationStatus();   
         }
-        else if (key == "enter"){
-            if (wordcount == 5){
-                update();
-                row += 1; //start new row
-                col = 0; //start at 0 for new row
-            }
-            else{
-                console.warn("Must enter 5 letter");
-            }
+    });
+}
+
+//Combine letter into word
+function guessWordGetter(){
+    var letterarray = [];
+    var to_string = '';
+    for (let c = 0; c < width; c++) {
+        let currentTile = document.getElementById(row.toString() + '-' + c.toString());
+        letterarray.push(currentTile.innerText);
+        console.log(currentTile.innerText);
         }
-        });
+    var guessWord = to_string.concat(letterarray[0],letterarray[1],letterarray[2],letterarray[3],letterarray[4])
+    return guessWord;
+}
+
+function checkValidationStatus(){
+    if (validationStatus){
+        update();
+        row += 1; //start new row
+        col = 0; //start at 0 for new row
     }
-}   
+    else{
+        console.warn("Please enter a valid word");
+    }
+}
+
 function intialize() {
     // Reset the game board
     document.getElementById("board").innerHTML = "";
@@ -145,15 +176,15 @@ function intialize() {
         else if (e.code == "Enter")
         {
             if (wordcount == 5){
-                update();
-                row += 1; //start new row
-                col = 0; //start at 0 for new row
+                guessWord = guessWordGetter();
+                console.log(guessWord);
+                wordDictionaryCheck(guessWord)
+                
             }
             else{
                 console.warn("Must enter 5 letter");
             }
         }
-
 
         if (!gameOver && row == height) {
             gameOver = true;
@@ -162,7 +193,48 @@ function intialize() {
 
     });
 }
-
+//In game Keyboard
+function addKeyboardClicks() {
+    const keys = document.querySelectorAll(".keyboard-row button");
+    for (let i = 0; i < keys.length; i++) {
+    keys[i].addEventListener("click", ({ target }) => {
+    const key = target.getAttribute("data-key");
+    
+        if (key !== "enter" && key !== "del"){
+            if (col < width) {
+                let currentTile = document.getElementById(row.toString() + '-' + col.toString());
+                if (currentTile.innerText == "") {
+                    currentTile.innerText = key.toUpperCase();
+                    col += 1;
+                    wordcount += 1;
+                    console.log(wordcount);
+                    console.log(key);
+                }
+            }
+        }
+        else if (key =="del"){
+            if (0 < col && col <= width) {
+                col -=1;
+            }
+            let currentTile = document.getElementById(row.toString() + '-' + col.toString());
+            currentTile.innerText = "";
+            if(wordcount > 0) {
+                wordcount -= 1;
+            }
+        }
+        else if (key == "enter"){
+            if (wordcount == 5){
+                guessWord = guessWordGetter();
+                console.log(guessWord); 
+                wordDictionaryCheck(guessWord);
+            }
+            else{
+                console.warn("Must enter 5 letter");
+            }
+        }
+        });
+    }
+}   
 
 function update() {
     let correct = 0;
@@ -170,7 +242,6 @@ function update() {
     let letterCount = {}; //keep track of letter frequency
     for (let i = 0; i < word.length; i++) {
         let letter = word[i];
-
         if (letterCount[letter]) {
            letterCount[letter] += 1;
         } 
@@ -178,8 +249,6 @@ function update() {
            letterCount[letter] = 1;
         }
     }
-
-    console.log(letterCount);
 
     //first iteration, check all the correct ones first
     for (let c = 0; c < width; c++) {
@@ -203,10 +272,9 @@ function update() {
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currentTile.innerText;
-
         // skip the letter if it has been marked correct
         if (!currentTile.classList.contains("correct")) {
-            //Is it in the word?         //make sure we don't double count
+            //Is it in the word?         //make sure don't double count
             if (word.includes(letter) && letterCount[letter] > 0) {
                 currentTile.classList.add("present");
                 letterCount[letter] -= 1;
@@ -216,31 +284,4 @@ function update() {
             }
         }
     }
-    fetch("https://random-words5.p.rapidapi.com/getMultipleRandom?count=5", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "random-words5.p.rapidapi.com",
-		"x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
-	}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
-    
-fetch(`https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=${word.toLowerCase()}`, {
-"method": "GET",
-"headers": {
-    "x-rapidapi-host": "dictionary-by-api-ninjas.p.rapidapi.com",
-    "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
-}
-})
-.then(response => {
-	console.log(response);
-})
-.catch(err => {
-	console.error(err);
-});
 }
