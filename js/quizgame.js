@@ -122,7 +122,7 @@ function createEqn(){
 }
 function EndQuiz() {
     $(".modal-content").html(`
-    <button type="button" class="btn-close" id="quizModal" data-bs-dismiss="modal" aria-label="Close" style="float:right;"></button>
+    <button type="button" class="btn-close" id="quizModal" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
     <h1 class="my-4 text-center" style="font-family:Luckiest Guy, cursive;">Well Done!</h1>
     <h1 class="my-4 text-center" style="font-family:Luckiest Guy, cursive;">You got <span id="scorePoints" style="color:pink;"></span> pts</h1>`);
     $("#scorePoints").text(count);

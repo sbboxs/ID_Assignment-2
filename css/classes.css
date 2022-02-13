@@ -1,37 +1,37 @@
 .section-classes {
-    width: 100%;
-    height: auto;
-    background-color: #FFD1D1;
+  width: 100%;
+  height: auto;
+  background-color: #ffd1d1;
 }
 
 .card {
-    height: 40vh;
-    border: 3px solid white;
+  height: 40vh;
+  border: 3px solid white;
 }
 
 .card-header {
-    background-color: #FFA2A2;
+  background-color: #ffa2a2;
 }
 
 .card-body {
-    background-color: #FFEBEB;
-
+  background-color: #ffebeb;
 }
 
 .card-text {
-    color: #4C4646;
+  font: 1.2em sans-serif;
+  color: #4c4646;
 }
 
 .learn-class {
-    color: white;
-    border: 2px white solid;
-    background: linear-gradient(to left, #FFA2A2 50%, #FFD1D1 50%);
-    background-size: 200% 100%;
-    background-position: bottom right;
-    transition: all .7s ease-out;
+  color: white;
+  border: 2px white solid;
+  background: linear-gradient(to left, #ffa2a2 50%, #ffd1d1 50%);
+  background-size: 200% 100%;
+  background-position: bottom right;
+  transition: all 0.7s ease-out;
 }
 
 .learn-class:hover {
-    color: black;
-    background-position: bottom left;    
+  color: black;
+  background-position: bottom left;
 }
