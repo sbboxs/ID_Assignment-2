@@ -88,7 +88,7 @@ $(document).ready(function () {
             if (e.target.id === "signupUsername"){
                 if(e.target.value.length > 0 && e.target.value.length < 8) {
                     setInputError(inputElement, "Username must be at least 8 characters in length");
-                } else {
+                } else if (e.target.value.length == 0) {
                     setInputError(inputElement, "Please enter a username");
                 }
 
