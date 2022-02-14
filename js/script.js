@@ -5,10 +5,25 @@ if(sessionStorage.getItem("username") != null) {
         <p style="padding-top: 0.8rem;">Welcome <span id="currentUser"></span>
     </li>
     <li class="nav-item">
-        <img src="./assets/user_display_picture/profile.jpg" style="height: 5rem; width: 5rem; border-radius: 75%;">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary text-muted" data-bs-toggle="dropdown" style="background-color:transparent;">
+                <img src="./assets/user_display_picture/profile.jpg" style="height: 5rem; width: 5rem; border-radius: 75%;">
+            </button>
+            <div class="dropdown-menu class-dropdown-options">
+                <a class="dropdown-item-text text-decoration-none logout-btn">Log Out</a>
+            </div>
+        </div>
     </li>`);
     $(".login-signup-btns").addClass("d-flex align-items-center");
+    $(".dropdown-item-text").hover(function(){
+        $(this).css("cursor", "pointer");
+    });
     $("#currentUser").text(sessionStorage.getItem("username"));
+
+    $(document).on("click", ".logout-btn", function(){
+        sessionStorage.removeItem("username");
+        location.reload();
+    });
 }
 
 $("#loginBtn").on("click", function (e) {
