@@ -61,7 +61,7 @@ $(document).ready(function() {
         }
 
         if(sessionStorage.getItem("username").length != 0){
-            $(".container-description a.login-link-btn").off("click");
+            $(".container-description").remove();
 
             $(".testimonial-list").append(`
             <div class="col-lg-4 mb-3 text-center mt-4 add-testimonial-pic-container">
