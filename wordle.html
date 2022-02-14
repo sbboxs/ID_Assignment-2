@@ -14,7 +14,7 @@
           <link rel="stylesheet" href="/css/style.css">
           <link rel="stylesheet" href="/css/classes.css">
           <link rel="stylesheet" href="/css/wordle.css">
-      
+          
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
           <link
@@ -22,7 +22,7 @@
               rel="stylesheet">
           <link rel="stylesheet" href="css/font-awesome.min.css">
       
-      
+
           <title>MOCHII EDU</title>
 
       </head>
@@ -64,16 +64,17 @@
               </div>
           </nav>
 
-        <section>
+        <section class="pb-3">
           <div class="container wordle">
-            <div class="py-5 container-header">
+            <div class="pt-5 pb-3 container-header">
               <h1 id="title">Wordle</h1>
             </div>
+            <div class="text-center wordle-error-msg mb-1">
+              <p class="wordle-error-msg"></p>
+            </div>
             <div class="text-center">
-              <button class="btn m-1 wordle-button" id="difficulty1">Easy</button>
-              <button class="btn m-1 wordle-button" id="difficulty2">Intermediate</button>
-              <button class="btn m-1 wordle-button" id="difficulty3">Insane</button>
-              <button class="btn m-1 wordle-button" id="definition">Definition</button>
+              <button class="btn btn-primary m-1 wordle-button" id="definition">Definition</button>
+              <button class="btn btn-primary m-1 wordle-button" id="reset">RESET</button>
             </div>
             <div class="row">
               <div class="col-md-sm" id="board">
@@ -138,6 +139,20 @@
           <span class="footer-copyright">Copyright &copy; 2022 MOCHII EDUCATION</span>
       </div>
   </footer>
+  <!--Login/Register Modal-->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-center" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title text-center w-100" id="modal-title"></h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+          </div>
+      </div>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"

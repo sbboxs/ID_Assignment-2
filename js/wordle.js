@@ -6,55 +6,19 @@ var col = 0; //current letter for that attempt
 var word;//word to be guess
 var wordDefinition; //defination of the word
 var gameOver = false;
+var keyboard = false;
 let wordcount = 0;
 var validationStatus;//check for validation true/false
 var gameStatus = 0;
-// //Select difficulty
-// document.getElementById("difficulty1").onclick = function(){
-//     var wordListLevel1 = [
-//         "KENNY",
-//         "FUNNY",
-//         "BERRY",
-//         "CHAIR"
-//     ]
-//     height = 5;
-//     width = 5;
-//     word = wordListLevel1[Math.floor(Math.random() * wordListLevel1.length)];
-//     console.log(word);
-//     intialize();
-// };
-// document.getElementById("difficulty2").onclick = function(){
-//     var wordListLevel2 = [
-//         "ABROAD",
-//         "ACCESS",
-//         "ACCEPT",
-//         "ACTING"
-//     ]
-//     height = 6;
-//     width = 5;
-//     word = wordListLevel2[Math.floor(Math.random() * wordListLevel2.length)];
-//     console.log(word);
-//     intialize();
-// };
-// document.getElementById("difficulty3").onclick = function(){
-//     var wordListLevel3 = [
-//         "ABILITY",
-//         "ABSENCE",
-//         "ACADEMY",
-//         "ACCOUNT"
-//     ]
-//     height = 7;
-//     width = 5;
-//     word = wordListLevel3[Math.floor(Math.random() * wordListLevel3.length)];
-//     console.log(word);
-//     intialize();
-// };
 
 window.onload = function(){
     randomWordGenerator();
     intialize();
     addKeyboardClicks();
 }
+document.getElementById("reset").onclick = function(){
+    location.reload();
+};
 
 //Random word generator
 function randomWordGenerator(){
@@ -74,8 +38,8 @@ function randomWordGenerator(){
         console.log(word);
         wordDictionaryCheck(word);
     });
-    
 }
+
 //Word dictionary
 function wordDictionaryCheck(guessWord){
     const settings = {
@@ -92,12 +56,21 @@ function wordDictionaryCheck(guessWord){
         $.ajax(settings).done(function (response) {
             if (gameStatus == 0 ){
                 wordDefinition = response.definition;//Get the definition of the word
-                console.log(wordDefinition);
                 gameStatus = 1;
             }
+            document.getElementById("definition").onclick = function(){
+                console.log(wordDefinition);
+                $(".modal-body").html(`
+                <h1 class="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">${wordDefinition}</h1>`);
+                $(".modal").modal("toggle");
+                $(".modal-title").text("Definition");
+                $(".modal-body").css("background-color", "#f8f4e4");
+            };
+            
         })
     }
     else{
+        keyboard = true;
         $.ajax(settings).done(function (response) {
             if (response.valid == true){
                 validationStatus = true;
@@ -112,7 +85,10 @@ function wordDictionaryCheck(guessWord){
             }
         })
     }
+    
 }
+
+
 
 //Combine letter into word
 function guessWordGetter(){
@@ -130,11 +106,15 @@ function guessWordGetter(){
 function checkValidationStatus(){
     if (validationStatus){
         update();
+        $(".wordle-error-msg").text("");
         row += 1; //start new row
         col = 0; //start at 0 for new row
+        keyboard = false;
     }
     else{
-        console.warn("Please enter a valid word");
+        keyboard = false;
+        $(".wordle-error-msg").text("Please enter a valid word");
+        invalidWord();
     }
 }
 
@@ -163,7 +143,7 @@ function intialize() {
     
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
-        if (gameOver) return; 
+        if (gameOver || keyboard) return; 
         //If input in range of Key A to Key Z
         if ("KeyA" <= e.code && e.code <= "KeyZ") {
             if (col < width) {
@@ -195,7 +175,8 @@ function intialize() {
                 wordDictionaryCheck(guessWord)
             }
             else{
-                console.warn("Must enter 5 letter");
+                $(".wordle-error-msg").text("Must enter 5 letter");
+                invalidWord();
             }
         }
 
@@ -240,7 +221,8 @@ function addKeyboardClicks() {
                 wordDictionaryCheck(guessWord);
             }
             else{
-                console.warn("Must enter 5 letter");
+                $(".wordle-error-msg").text("Must enter 5 letter");
+                invalidWord();
             }
         }
         });
@@ -311,3 +293,17 @@ function update() {
         }
     }
 }
+function invalidWord() {
+    $(".wordle-error-msg").addClass("row-shake");
+    for(i=row*5 + 1;i<=(row+1)*5;i++){
+        $(`#${i}`).addClass("row-shake");
+        $(`#${i}`).css("color", "red");
+    }
+    setTimeout(function(){
+        $(".wordle-error-msg").removeClass("row-shake");
+        for(i=row*5 + 1;i<=(row+1)*5;i++){
+            $(`#${i}`).removeClass("row-shake");
+        }
+    }, 500);
+}
+
