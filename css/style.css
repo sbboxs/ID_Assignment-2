@@ -1,7 +1,8 @@
 @font-face {
   font-family: "Bubblegum";
-  src: local("BubbleGum"), url(fonts/Bubblegum.ttf) format("truetype"),
-    url(fonts/Bubblegum.woff) format("woff");
+  src: url(/fonts/Bubblegum.ttf);
+  src: url(/fonts/Bubblegum.ttf) format("truetype"),
+    url(/fonts/Bubblegum.woff) format("woff");
 }
 
 body {
