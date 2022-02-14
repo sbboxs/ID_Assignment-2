@@ -1,5 +1,8 @@
 .section-about {
     width: 100%;
     height: auto;
+}
+
+.container-header {
     background-color: #FFD1D1;
 }
