@@ -1,12 +1,11 @@
-var height = 6; //number of guesses
+var height = 5; //number of guesses
 var width = 5; //length of the word
-
 var row = 0; //current guess (attempt #)
 var col = 0; //current letter for that attempt
 var word;//word to be guess
 var wordDefinition; //defination of the word
 var gameOver = false;
-var keyboard = false;
+var keyboard = true;
 let wordcount = 0;
 var validationStatus;//check for validation true/false
 var gameStatus = 0;
@@ -70,7 +69,7 @@ function wordDictionaryCheck(guessWord){
         })
     }
     else{
-        keyboard = true;
+        keyboard = false;
         $.ajax(settings).done(function (response) {
             if (response.valid == true){
                 validationStatus = true;
@@ -105,17 +104,26 @@ function guessWordGetter(){
 
 function checkValidationStatus(){
     if (validationStatus){
-        update();
-        $(".wordle-error-msg").text("");
-        row += 1; //start new row
-        col = 0; //start at 0 for new row
-        keyboard = false;
+        update()
+        if(gameOver){
+            //End game of the game, display the correct word.
+            $(".wordle-error-msg").removeClass("row-shake");
+            $(".wordle-error-msg").css("color", "green");
+            $(".wordle-error-msg").text(`The word was ${word}!`);
+        }
+        else{
+            $(".wordle-error-msg").text("");
+            keyboard = true;
+            
+        }
+        
     }
     else{
-        keyboard = false;
         $(".wordle-error-msg").text("Please enter a valid word");
         invalidWord();
+        keyboard = true;
     }
+    
 }
 
 function intialize() {
@@ -143,7 +151,11 @@ function intialize() {
     
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
-        if (gameOver || keyboard) return; 
+        if (row == height) {
+            gameOver = true;
+            
+        }
+        if (!keyboard) return; 
         //If input in range of Key A to Key Z
         if ("KeyA" <= e.code && e.code <= "KeyZ") {
             if (col < width) {
@@ -178,13 +190,8 @@ function intialize() {
                 $(".wordle-error-msg").text("Must enter 5 letter");
                 invalidWord();
             }
+            
         }
-
-        if (!gameOver && row == height) {
-            gameOver = true;
-            document.getElementById("answer").innerText = word;
-        }
-
     });
 }
 //In game Keyboard
@@ -192,39 +199,45 @@ function addKeyboardClicks() {
     const keys = document.querySelectorAll(".keyboard-row button");
     for (let i = 0; i < keys.length; i++) {
     keys[i].addEventListener("click", ({ target }) => {
-    const key = target.getAttribute("data-key");
-    
-        if (key !== "enter" && key !== "del"){
-            if (col < width) {
-                let currentTile = document.getElementById(row.toString() + '-' + col.toString());
-                if (currentTile.innerText == "") {
-                    currentTile.innerText = key.toUpperCase();
-                    col += 1;
-                    wordcount += 1;
+        if(!keyboard){
+            return;
+        }
+        const key = target.getAttribute("data-key");
+        if (!gameOver && row == height) {
+            gameOver = true;
+            
+        }
+            if (key !== "enter" && key !== "del"){
+                if (col < width) {
+                    let currentTile = document.getElementById(row.toString() + '-' + col.toString());
+                    if (currentTile.innerText == "") {
+                        currentTile.innerText = key.toUpperCase();
+                        col += 1;
+                        wordcount += 1;
+                    }
                 }
             }
-        }
-        else if (key =="del"){
-            if (0 < col && col <= width) {
-                col -=1;
+            else if (key =="del"){
+                if (0 < col && col <= width) {
+                    col -=1;
+                }
+                let currentTile = document.getElementById(row.toString() + '-' + col.toString());
+                currentTile.innerText = "";
+                if(wordcount > 0) {
+                    wordcount -= 1;
+                }
             }
-            let currentTile = document.getElementById(row.toString() + '-' + col.toString());
-            currentTile.innerText = "";
-            if(wordcount > 0) {
-                wordcount -= 1;
+            else if (key == "enter"){
+                if (wordcount == 5){
+                    guessWord = guessWordGetter();
+                    console.log(guessWord); 
+                    wordDictionaryCheck(guessWord);
+                }
+                else{
+                    $(".wordle-error-msg").text("Must enter 5 letter");
+                    invalidWord();
+                }
             }
-        }
-        else if (key == "enter"){
-            if (wordcount == 5){
-                guessWord = guessWordGetter();
-                console.log(guessWord); 
-                wordDictionaryCheck(guessWord);
-            }
-            else{
-                $(".wordle-error-msg").text("Must enter 5 letter");
-                invalidWord();
-            }
-        }
         });
     }
 }   
@@ -266,13 +279,8 @@ function update() {
             correct += 1;
             letterCount[letter] -= 1; //deduct the letter count
         }
-
-        if (correct == width) {
-            gameOver = true;
-        }
     }
-
-    console.log(letterCount);
+    
     //go again and mark which ones are present but in wrong position
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
@@ -292,6 +300,13 @@ function update() {
             }
         }
     }
+    row += 1; //start new row
+    col = 0; //start at 0 for new row
+
+    if (correct == width || row == height) {
+        gameOver = true;
+    }
+    
 }
 function invalidWord() {
     $(".wordle-error-msg").addClass("row-shake");

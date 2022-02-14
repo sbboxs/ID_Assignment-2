@@ -5,13 +5,41 @@ if(sessionStorage.getItem("username") != null) {
         <p style="padding-top: 0.8rem;">Welcome <span id="currentUser"></span>
     </li>
     <li class="nav-item">
-        <img src="./assets/user_display_picture/profile.jpg" style="height: 5rem; width: 5rem; border-radius: 75%;">
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary text-muted" data-bs-toggle="dropdown" style="background-color:transparent;">
+                <img src="./assets/user_display_picture/profile.jpg" style="height: 5rem; width: 5rem; border-radius: 75%;">
+            </button>
+            <div class="dropdown-menu class-dropdown-options">
+                <a class="dropdown-item-text text-decoration-none logout-btn">Log Out</a>
+            </div>
+        </div>
     </li>`);
     $(".login-signup-btns").addClass("d-flex align-items-center");
+    $(".dropdown-item-text").hover(function(){
+        $(this).css("cursor", "pointer");
+    });
     $("#currentUser").text(sessionStorage.getItem("username"));
+
+    $(document).on("click", ".logout-btn", function(){
+        sessionStorage.removeItem("username");
+        location.reload();
+    });
 }
 
-$("#loginBtn").on("click", function (e) {
+if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("sciencegame") || location.href.includes("Science")){
+    if(sessionStorage.getItem("username") == null){
+        $(".modal").attr("id", "lockedModal");
+        $(".modal-header button").remove();
+        $(".modal-body").html(`
+        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="text-decoration-none login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="text-decoration-none register-link-btn">Register</a> yourself now!</p>
+        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="text-decoration-none home-link-btn" href="index.html">here</a> to return to the home page</p>`)
+        $("#modal-title").text("! Locked Feature !");
+        $(".modal").modal({backdrop: "static", keyboard: false});
+        $(".modal").modal("toggle");
+    }
+}
+
+$("#loginBtn, .login-link-btn").on("click", function (e) {
     e.preventDefault();
 
     $.ajax({
@@ -20,6 +48,14 @@ $("#loginBtn").on("click", function (e) {
         success: function (data) {
             $(".modal-body").html(data);
             $("#modal-title").text("Login");
+            if ($(".modal").attr("id") == "lockedModal"){
+                $("form").append(`
+                <div class="my-4 text-center form__input-group">
+                    <p class="form__text ">
+                        <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
+                    </p>
+                </div>`)
+            }
             $(".modal").modal("show");
             if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
                 $(".other-pgs-styles").attr("href", "css/classes.css");
@@ -30,7 +66,7 @@ $("#loginBtn").on("click", function (e) {
         }
     });
 });
-$("#registerBtn").on("click", function (e) {
+$("#registerBtn, .register-link-btn").on("click", function (e) {
     e.preventDefault();
 
     $.ajax({
@@ -39,6 +75,14 @@ $("#registerBtn").on("click", function (e) {
         success: function (data) {
             $(".modal-body").html(data);
             $("#modal-title").text("Register");
+            if ($(".modal").attr("id") == "lockedModal"){
+                $("form").append(`
+                <div class="my-4 text-center form__input-group">
+                    <p class="form__text ">
+                        <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
+                    </p>
+                </div>`)
+            }
             $(".modal").modal("show");
             if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
                 $(".other-pgs-styles").attr("href", "css/classes.css");
@@ -49,6 +93,7 @@ $("#registerBtn").on("click", function (e) {
         }
     });
 });
+
 if (document.getElementById("biologyBtn") != null){
     document.getElementById("biologyBtn").onclick = function(){
         location.href = "biology.html";
@@ -69,7 +114,6 @@ if (document.getElementById("mathPracticeBtn") != null){
         location.href = "quizgame.html";
     };
 }
-
 if (document.getElementById("wordleGameBtn") != null){
     document.getElementById("wordleGameBtn").onclick = function() {
         location.href = "wordle.html";

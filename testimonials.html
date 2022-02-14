@@ -10,8 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/testimonials.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/testimonials.css" type="text/css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-sm">
         <div class="container">
             <a href="#" class="navbar-brand">
-                <img src="assets/index_assets/fgfgs.svg" class="w-50 brand-image img-responsive">
+                <img src="assets/index_assets/fgfgs.svg" class="w-50 brand-image img-responsive" alt="mochii edu logo">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -69,7 +69,7 @@
         <div class="container text-center">
             <div class="py-5 container-header">
                 <h2 class="container-title">Testimonials</h2>
-                <p class="container-description">Please Login to submit.</p>
+                <p class="container-description">Please <a class="text-decoration-none login-link-btn">Login</a> to submit.</p>
             </div>
         </div>
         <div class="container">
@@ -78,7 +78,7 @@
                     <div class="card border-0">
                         <div class="d-flex p-3 just-content-start align-items-center">
                             <div class="image-area">
-                                <img src="assets/user_display_picture/profile.jpg" class="display-picture">
+                                <img src="assets/user_display_picture/profile.jpg" class="display-picture" alt="default profile pic">
                             </div>
 
                             <div class="px-3 name-class-rating">
@@ -107,7 +107,7 @@
                     <div class="card border-0">
                         <div class="d-flex p-3 just-content-start align-items-center">
                             <div class="image-area">
-                                <img src="assets/user_display_picture/profile.jpg" class="display-picture">
+                                <img src="assets/user_display_picture/profile.jpg" class="display-picture" alt="default profile pic">
                             </div>
 
                             <div class="px-3 name-class-rating">
@@ -136,7 +136,7 @@
                     <div class="card border-0">
                         <div class="d-flex p-3 just-content-start align-items-center">
                             <div class="image-area">
-                                <img src="assets/user_display_picture/profile.jpg" class="display-picture">
+                                <img src="assets/user_display_picture/profile.jpg" class="display-picture" alt="default profile pic">
                             </div>
 
                             <div class="px-3 name-class-rating">
@@ -165,7 +165,7 @@
                     <div class="card border-0">
                         <div class="d-flex p-3 just-content-start align-items-center">
                             <div class="image-area">
-                                <img src="assets/user_display_picture/profile.jpg" class="display-picture">
+                                <img src="assets/user_display_picture/profile.jpg" class="display-picture" alt="default profile pic">
                             </div>
 
                             <div class="px-3 name-class-rating">
@@ -206,8 +206,7 @@
     </footer>
 
     <!--Login/Register Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-center" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -219,7 +218,9 @@
                 </div>
             </div>
         </div>
+    </div>
     <!-- Optional JavaScript -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/v4-shims.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -232,8 +233,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script src="/js/script.js" async></script>
-    <script src="/js/testimonial.js" async></script>
+    <script src="js/script.js" async></script>
+    <script src="js/testimonial.js" async></script>
 </body>
 
 </html>

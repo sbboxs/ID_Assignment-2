@@ -93,6 +93,11 @@ footer {
   position: relative;
 }
 
+.login-link-btn:hover,
+.register-link-btn:hover {
+  cursor: pointer;
+}
+
 /* placeholder */
 ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
