@@ -2,6 +2,7 @@ main {
   font-family: "Luckiest Guy", cursive;
   padding: 0;
   margin: 0;
+  background-color: rgb(253, 201, 225);
 }
 .game-container {
   background-image: url(../assets/showcase.svg);
