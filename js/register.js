@@ -24,6 +24,14 @@ $(document).ready(function () {
             success: function (data) {
                 $(".modal-body").html(data);
                 $("#modal-title").text("Login");
+                if ($(".modal").attr("id") == "lockedModal"){
+                    $("form").append(`
+                    <div class="my-4 text-center form__input-group">
+                        <p class="form__text ">
+                            <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
+                        </p>
+                    </div>`)
+                }
                 $(".modal").modal("show");
                 if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
                     $(".other-pgs-styles").attr("href", "css/classes.css");
