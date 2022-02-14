@@ -12,6 +12,7 @@ $(document).ready(function() {
           "cache-control": "no-cache"
         }
     }
+
       
     $.ajax(settings).done(function (response) {
         console.log(response);
