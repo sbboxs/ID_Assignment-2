@@ -63,7 +63,7 @@ $(document).ready(function() {
         if(sessionStorage.getItem("username").length != 0){
             $(".testimonial-list").append(`
             <div class="col-lg-4 mb-3 text-center mt-4 add-testimonial-pic-container">
-                <img src="/assets/testimonial_assets/addtestimonial.svg" id="addTestimonialPic" style="max-height: 25vh; opacity: 80%;" alt="add button">
+                <img src="assets/testimonial_assets/addtestimonial.svg" id="addTestimonialPic" style="max-height: 25vh; opacity: 80%;" alt="add button">
             </div>`);
         
             $("#addTestimonialPic").hover(function(){
