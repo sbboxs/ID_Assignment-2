@@ -136,10 +136,13 @@ $(document).ready(function() {
                 let testimonialName = sessionStorage.getItem("username");
         
                 $(".new-testimonial-selected-name").text(testimonialName);
-        
+                
+                $(".dropdown-item-text").hover(function(){
+                    $(this).css("cursor", "pointer");
+                });
                 $(".dropdown-item-text").on("click", function(){
                     $(".new-class-btn").text($(this).text());
-                })
+                });
         
                 $(".new-class-btn").css({
                     "background-color": "transparent",
@@ -149,7 +152,7 @@ $(document).ready(function() {
                 });
                 $(".class-dropdown-options a").css({
                     "text-decoration": "none",
-                })
+                });
         
                 $("#addTestimonialPic").hide();
             });
@@ -157,6 +160,13 @@ $(document).ready(function() {
             if($("#testimonialSubmitBtn") != null) {
                 $("body").on("click", "#testimonialSubmitBtn", function(){
                     if($("#star1").hasClass("full-star") && !$(".new-class-btn").text().includes("CLASSES")){
+                        $(".modal-content").html(`
+                        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_h2lo2hgb.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: 0 auto;"  loop  autoplay></lottie-player>
+                        <h2 class="text-center w-100 mb-4" style="color:white;">Loading...</h2>`);
+                        $(".modal-content").addClass("bg-transparent border-0");
+                        $(".modal").modal({backdrop: "static", keyboard: false});
+                        $(".modal").modal("toggle");
+
                         $("#testimonialSubmitBtn").removeAttr("onClick");
                         $(".submit-error-msg").remove();
                         $("#newCard").removeAttr("id");
@@ -194,11 +204,25 @@ $(document).ready(function() {
                             "cache-control": "no-cache"
                         },
                         "processData": false,
-                        "data": JSON.stringify(jsondata)
+                        "data": JSON.stringify(jsondata),
+                        "complete": function(){
+                            $(".modal").modal("toggle");
+                        }
                         }
 
                         $.ajax(settings).done(function (response) {
-                        console.log(response);
+                            console.log(response);
+
+                            $(".modal-content").html(`
+                            <div class="modal-header">
+                                <h2 class="modal-title text-center w-100" id="modal-title"></h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+            
+                            </div>`);
+                            $(".modal-content").removeClass("bg-transparent border-0");
+                            $(".modal").modal({backdrop: true, keyboard: true});
                         });
         
                         $("#addTestimonialPic").show();
