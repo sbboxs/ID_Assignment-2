@@ -26,7 +26,7 @@ if(sessionStorage.getItem("username") != null) {
     });
 }
 
-if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("sciencegame") || location.href.includes("Science")){
+if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
     if(sessionStorage.getItem("username") == null){
         $(".modal").attr("id", "lockedModal");
         $(".modal-header button").remove();

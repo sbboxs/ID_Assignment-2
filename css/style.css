@@ -41,12 +41,12 @@ body {
 }
 
 .nav-item button {
-  background-color: #FFD1D1;
+  background-color: #ffd1d1;
   border: none;
 }
 
 .nav-item button:hover {
-  background-color: #FF6075;
+  background-color: #ff6075;
   color: black;
 }
 
