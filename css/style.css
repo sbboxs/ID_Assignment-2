@@ -2,7 +2,7 @@
   font-family: "BubbleGum";
   src: url("/fonts/BubbleGum 400.ttf");
   src: url("/fonts/BubbleGum 400.ttf") format("truetype"),
-    url() url("/fonts/Bubblegum.woff") format("woff");
+    url("/fonts/Bubblegum.woff") format("woff");
 }
 
 body {
