@@ -39,8 +39,8 @@ function handleGuess(chosenLetter) {
 
 function updateOrganPicture() {
   index = organ_list.indexOf(answer);
-  document.getElementById('organPic').src = '../assets/biology_assets/human-anatomy/' + index + '.png';
   document.getElementById('organPic').alt = 'science pictures';
+  document.getElementById('organPic').src = './assets/biology_assets/human-anatomy/' + index + '.png';
 }
 
 function checkIfGameWon() {
