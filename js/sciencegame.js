@@ -5,7 +5,6 @@ var organ_list = [
   "LUNGS",
   "STOMACH"
 ];
-
 let answer = '';
 let maxWrong = 6;
 let mistakes = 0;

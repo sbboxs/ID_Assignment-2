@@ -1,6 +1,5 @@
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
-
     messageElement.textContent = message;
     messageElement.classList.remove("form__message--success", "form__message--error");
     messageElement.classList.add(`form__message--${type}`);
@@ -9,11 +8,9 @@ function setFormMessage(formElement, type, message) {
 $(document).ready(function () {
     const loginForm = document.querySelector("#login");
     const APIKEY = "61d277b1ccd0211b320894cd";
-
     //If create account, hidden login form and show login form
     $("#linkCreateAccount").on("click", function (e) {
         e.preventDefault();
-
         $.ajax({
             url: 'register.html',
             dataType: 'text',
