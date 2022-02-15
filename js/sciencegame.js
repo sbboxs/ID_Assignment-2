@@ -97,7 +97,7 @@ document.getElementById("instruction").onclick = function(){
   <p>2. If you are unable to guess the correct alphabets for the word, you will cause a fail in the round. There will be a total of 6 fails.</p>
   <p>3. Each key will be disable and turn grey after pressed.</p>
   <p>4. Failure to guess the word before the 6th fail will cause you to lose the round.</p>
-  <p>Goodluck and have fun!</p>
+  <p class="text-center">Good luck and have fun!</p>
   </div>`);
   $(".modal").modal("toggle");
   $(".modal-title").text("Instruction");
