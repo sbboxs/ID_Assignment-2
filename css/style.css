@@ -1,13 +1,15 @@
 @font-face {
-  font-family: "Bubblegum";
-  src: url(/fonts/Bubblegum.ttf);
-  src: url(/fonts/Bubblegum.ttf) format("truetype"),
-    url(/fonts/Bubblegum.woff) format("woff");
+  font-family: "BubbleGum";
+  src: url("../fonts/Bubblegum.eot") format("eot"),
+    url("BubbleGum.svg#BubbleGum") format("svg"),
+    url("../fonts/Bubblegum.ttf") format("truetype"),
+    url("../fonts/Bubblegum.woff") format("woff"),
+    url("../fonts/BubbleGum.woff2") format("woff2");
 }
 
 body {
   background-color: white;
-  font-family: "Bubblegum", sans-serif;
+  font-family: "BubbleGum", sans-serif;
 }
 
 /* navigation bar */
@@ -41,12 +43,12 @@ body {
 }
 
 .nav-item button {
-  background-color: #FFD1D1;
+  background-color: #ffd1d1;
   border: none;
 }
 
 .nav-item button:hover {
-  background-color: #FF6075;
+  background-color: #ff6075;
   color: black;
 }
 
@@ -93,9 +95,17 @@ footer {
   position: relative;
 }
 
+.login-link-btn,
+.register-link-btn,
+.home-link-btn {
+  color: rgb(63, 78, 211) !important;
+}
+
 .login-link-btn:hover,
-.register-link-btn:hover {
-  cursor: pointer;
+.register-link-btn:hover,
+.home-link-btn:hover {
+  cursor: pointer !important;
+  color: pink !important;
 }
 
 /* placeholder */

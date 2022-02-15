@@ -4,34 +4,32 @@
 }
 
 .container-header {
-  background-color: #FFD1D1;
+  background-color: #ffd1d1;
 }
 
 .card {
-  height: 40vh;
-  border: 3px solid white;
-  
-  
+  min-height: 40vh;
+  border: solid rgb(245, 164, 164);
 }
 
 .card-header {
-  background-color: #FFA2A2;
+  background-color: #ffa2a2;
 }
 
 .card-body {
-  background-color: #FFEBEB;
+  background-color: #ffebeb;
 }
 
 .card-text {
   font-family: Verdana, sans-serif;
   font-weight: bold;
-  color: #4C4646;
+  color: #4c4646;
 }
 
 .learn-class {
   color: white;
   border: 2px white solid;
-  background: linear-gradient(to left, #FFD1D1 50%, #FF6075 50%);
+  background: linear-gradient(to left, #ffd1d1 50%, #ff6075 50%);
   background-size: 200% 100%;
   background-position: bottom right;
   transition: all 0.7s ease-out;
