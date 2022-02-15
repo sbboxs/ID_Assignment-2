@@ -14,62 +14,26 @@ let wordStatus = null;
 
 function randomWord() {
   answer = organ_list[Math.floor(Math.random() * organ_list.length)];
-  // wordDictionaryCheck(answer)
   updateOrganPicture();
 }
-
-// function generateButtons() {
-//   let buttonsHTML = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(letter =>
-//     `
-//       <button
-//         class="key btn btn-lg btn-primary m-2"
-//         id='` + letter + `'
-//         onClick="handleGuess('` + letter + `')"
-//       >
-//         ` + letter + `
-//       </button>
-//     `).join('');
-
-//   document.getElementById('keyboard').innerHTML = buttonsHTML;
-// }
-
-// function wordDictionaryCheck(guessWord){
-//   const settings = {
-//       "async": true,
-//       "crossDomain": true,
-//       "url": `https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary?word=${guessWord}`,
-//       "method": "GET",
-//       "headers": {
-//           "x-rapidapi-host": "dictionary-by-api-ninjas.p.rapidapi.com",
-//           "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
-//       }
-//   };
-//     $.ajax(settings).done(function (response) {
-//         wordDefinition = response.definition;//Get the definition of the word
-//         document.getElementById("hint").onclick = function(){
-//             console.log(wordDefinition);
-//             $(".modal-body").html(`
-//             <h1 class="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">${wordDefinition}</h1>`);
-//             $(".modal").modal("toggle");
-//             $(".modal-title").text("Hint");
-//             $(".modal-body").css("background-color", "#f8f4e4");
-//         };
-//     })
-//   }
 function handleGuess(chosenLetter) {
-  guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-  document.getElementById(chosenLetter).setAttribute('disabled', true);
-  $('#'+chosenLetter).addClass("disable");
-  console.log(chosenLetter)
-  //Maybe store the guessed word somewhere else?
-  if (answer.indexOf(chosenLetter) >= 0) {
-    guessedWord();
-    checkIfGameWon();
-  } else if (answer.indexOf(chosenLetter) === -1) {
-    mistakes++;
-    console.log(mistakes);
-    updateMistakes();
-    checkIfGameLost();
+  if(mistakes!==maxWrong){
+    guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
+    document.getElementById(chosenLetter).setAttribute('disabled', true);
+    $('#'+chosenLetter).addClass("disable");
+    console.log(chosenLetter)
+    if (answer.indexOf(chosenLetter) >= 0) {
+      guessedWord();
+      checkIfGameWon();
+    } else if (answer.indexOf(chosenLetter) === -1) {
+      mistakes++;
+      console.log(mistakes);
+      updateMistakes();
+      checkIfGameLost();
+    } 
+  }
+  else{
+    reset();
   }
 }
 
@@ -80,9 +44,16 @@ function updateOrganPicture() {
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
-    // document.getElementById('keyboard').innerHTML = 'You Won!!!';
-    console.log("Won");
-  }
+    $(".modal-body").html(`
+    <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
+    <p>Congrats!! You won the game</p>
+    <p>The correct name of the picture is:${answer.toLocaleLowerCase()}</p>
+    <p>Press reset button to start new round!</p>
+    </div>`);
+    $(".modal").modal("toggle");
+    $(".modal-title").text("End of game");
+    $(".modal-title").css("color", "Green");
+    }
 }
 
 function checkIfGameLost() {
@@ -90,7 +61,8 @@ function checkIfGameLost() {
     $(".modal-body").html(`
     <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
     <p>OH NO!! You ran out of chances!</p>
-    <p>The correct name is:${answer.toLocaleLowerCase()}</p>
+    <p>The correct name of the picture is is:${answer.toLocaleLowerCase()}</p>
+    <p>Press reset button to start new round!</p>
     </div>`);
     $(".modal").modal("toggle");
     $(".modal-title").text("End of game");
