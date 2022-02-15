@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Bubblegum";
+  font-family: "BubbleGum";
   src: url(/fonts/Bubblegum.ttf);
   src: url(/fonts/Bubblegum.ttf) format("truetype"),
     url(/fonts/Bubblegum.woff) format("woff");
@@ -7,7 +7,7 @@
 
 body {
   background-color: white;
-  font-family: "Bubblegum", sans-serif;
+  font-family: "BubbleGum", sans-serif;
 }
 
 /* navigation bar */
