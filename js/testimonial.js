@@ -197,20 +197,20 @@ $(document).ready(function() {
 
                         let jsondata = {"username": username,"classes": currentClass, "ratings": ratingsNum, "review": reviewContent};
                         settings = {
-                            "async": true,
-                            "crossDomain": true,
-                            "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedutestimonial",
-                            "method": "POST",
-                            "headers": {
-                                "content-type": "application/json",
-                                "x-apikey": APIKEY,
-                                "cache-control": "no-cache"
-                            },
-                            "processData": false,
-                            "data": JSON.stringify(jsondata),
-                            "complete": function(){
-                                $(".modal").modal("toggle");
-                            }
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedutestimonial",
+                        "method": "POST",
+                        "headers": {
+                            "content-type": "application/json",
+                            "x-apikey": APIKEY,
+                            "cache-control": "no-cache"
+                        },
+                        "processData": false,
+                        "data": JSON.stringify(jsondata),
+                        "complete": function(){
+                            $(".modal").modal("toggle");
+                        }
                         };
 
                         $.ajax(settings).done(function (response) {
@@ -240,7 +240,7 @@ $.fn.toggleStarRatings = function(){
     $(this).attr("class", "fas fa-star full-star");
     $(this).prevAll().attr("class", "fas fa-star full-star");
     $(this).nextAll().attr("class", "far fa-star empty-star");
-};
+}
 
 function emptyTestimonial() {
     if(!$("#star1").hasClass("full-star") || $(".new-class-btn").text().includes("CLASSES")){
