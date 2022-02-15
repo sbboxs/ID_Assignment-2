@@ -8,8 +8,8 @@
 }
 
 .card {
-  min-height: 40vh;
-  border: solid rgb(245, 164, 164);
+  height: 40vh;
+  border: 3px solid white;
 }
 
 .card-header {

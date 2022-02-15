@@ -24,19 +24,15 @@ if(sessionStorage.getItem("username") != null) {
         sessionStorage.removeItem("username");
         location.reload();
     });
-}
-
-if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
-    if(sessionStorage.getItem("username") == null){
-        $(".modal").attr("id", "lockedModal");
-        $(".modal-header button").remove();
-        $(".modal-body").html(`
-        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="text-decoration-none login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="text-decoration-none register-link-btn">Register</a> yourself now!</p>
-        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="text-decoration-none home-link-btn" href="index.html">here</a> to return to the home page</p>`);
-        $("#modal-title").text("! Locked Feature !");
-        $(".modal").modal({backdrop: "static", keyboard: false});
-        $(".modal").modal("toggle");
-    }
+} else if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
+    $(".modal").attr("id", "lockedModal");
+    $(".modal-header button").remove();
+    $(".modal-body").html(`
+    <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="text-decoration-none login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="text-decoration-none register-link-btn">Register</a> yourself now!</p>
+    <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="text-decoration-none home-link-btn" href="index.html">here</a> to return to the home page</p>`);
+    $("#modal-title").text("! Locked Feature !");
+    $(".modal").modal({backdrop: "static", keyboard: false});
+    $(".modal").modal("toggle");
 }
 
 $("#loginBtn, .login-link-btn").on("click", function (e) {

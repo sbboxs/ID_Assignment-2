@@ -117,7 +117,7 @@ function checkValidationStatus(){
             else{
                 $(".modal-body").html(`
                     <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
-                    <p>Seem like you ran out of chances.. :( /p>
+                    <p>Seem like you ran out of chances.. :( </p>
                     <p>The correct word is: ${word}</p>
                     <p>Press reset button to start new round!</p>
                     </div>`);
