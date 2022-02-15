@@ -11,13 +11,13 @@ let maxWrong = 6;
 let mistakes = 0;
 let guessed = [];
 let wordStatus = null;
-
+var correct;
 function randomWord() {
   answer = organ_list[Math.floor(Math.random() * organ_list.length)];
   updateOrganPicture();
 }
 function handleGuess(chosenLetter) {
-  if(mistakes!==maxWrong){
+  if(mistakes!==maxWrong && correct!== maxWrong){
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
     document.getElementById(chosenLetter).setAttribute('disabled', true);
     $('#'+chosenLetter).addClass("disable");
@@ -44,14 +44,15 @@ function updateOrganPicture() {
 
 function checkIfGameWon() {
   if (wordStatus === answer) {
+    correct = 6;
     $(".modal-body").html(`
     <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
-    <p>Congrats!! You won the game</p>
-    <p>The correct name of the picture is:${answer.toLocaleLowerCase()}</p>
+    <p>You're a genius!</p>
+    <p>The correct name of the picture is: ${answer}</p>
     <p>Press reset button to start new round!</p>
     </div>`);
     $(".modal").modal("toggle");
-    $(".modal-title").text("End of game");
+    $(".modal-title").text("CONGRATSS!!");
     $(".modal-title").css("color", "Green");
     }
 }
@@ -60,12 +61,12 @@ function checkIfGameLost() {
   if (mistakes === maxWrong) {
     $(".modal-body").html(`
     <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
-    <p>OH NO!! You ran out of chances!</p>
-    <p>The correct name of the picture is is:${answer.toLocaleLowerCase()}</p>
+    <p>Seem like you ran out of chances.. :( </p>
+    <p>The correct name of the picture is: ${answer}</p>
     <p>Press reset button to start new round!</p>
     </div>`);
     $(".modal").modal("toggle");
-    $(".modal-title").text("End of game");
+    $(".modal-title").text("Better luck next time!");
     $(".modal-title").css("color", "red");
     }
 }

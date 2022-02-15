@@ -9,6 +9,7 @@ var keyboard = true;
 let wordcount = 0;
 var validationStatus;//check for validation true/false
 var gameStatus = 0;
+var endMatch;
 
 window.onload = function(){
     randomWordGenerator();
@@ -58,7 +59,6 @@ function wordDictionaryCheck(guessWord){
                 gameStatus = 1;
             }
             document.getElementById("definition").onclick = function(){
-                console.log(wordDefinition);
                 $(".modal-body").html(`
                 <h1 class="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">${wordDefinition}</h1>`);
                 $(".modal").modal("toggle");
@@ -73,13 +73,11 @@ function wordDictionaryCheck(guessWord){
         $.ajax(settings).done(function (response) {
             if (response.valid == true){
                 validationStatus = true;
-                console.log(validationStatus);
                 checkValidationStatus();   
             }
             
             else if(response.valid == false){
                 validationStatus = false;
-                console.log(validationStatus);
                 checkValidationStatus();   
             }
         });
@@ -94,7 +92,6 @@ function guessWordGetter(){
     for (let c = 0; c < width; c++) {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
         letterarray.push(currentTile.innerText);
-        console.log(currentTile.innerText);
         }
     var guessWord = to_string.concat(letterarray[0],letterarray[1],letterarray[2],letterarray[3],letterarray[4]);
     return guessWord;
@@ -106,9 +103,30 @@ function checkValidationStatus(){
         if(gameOver){
             //End game of the game, display the correct word.
             $(".wordle-error-msg").removeClass("row-shake");
-            $(".wordle-error-msg").css("color", "green");
-            $(".wordle-error-msg").text(`The word was ${word}!`);
+            if(endMatch){
+                $(".modal-body").html(`
+                    <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
+                    <p>You're a genius!</p>
+                    <p>The correct word is: ${word}</p>
+                    <p>Press reset button to start new round!</p>
+                    </div>`);
+                    $(".modal").modal("toggle");
+                    $(".modal-title").text("CONGRATSS!!");
+                    $(".modal-title").css("color", "green");
+                }
+            else{
+                $(".modal-body").html(`
+                    <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
+                    <p>Seem like you ran out of chances.. :( /p>
+                    <p>The correct word is: ${word}</p>
+                    <p>Press reset button to start new round!</p>
+                    </div>`);
+                    $(".modal").modal("toggle");
+                    $(".modal-title").text("Better luck next time!!");
+                    $(".modal-title").css("color", "Red");
+            }
         }
+
         else{
             $(".wordle-error-msg").text("");
             keyboard = true;
@@ -150,7 +168,7 @@ function intialize() {
     // Listen for Key Press
     document.addEventListener("keyup", (e) => {
         if (row == height) {
-            gameOver = true;
+            return;
             
         }
         if (!keyboard) return; 
@@ -181,7 +199,6 @@ function intialize() {
         {
             if (wordcount == 5){
                 guessWord = guessWordGetter();
-                console.log(guessWord);
                 wordDictionaryCheck(guessWord);
             }
             else{
@@ -228,7 +245,6 @@ function addKeyboardClicks() {
             else if (key == "enter"){
                 if (wordcount == 5){
                     guessWord = guessWordGetter();
-                    console.log(guessWord); 
                     wordDictionaryCheck(guessWord);
                 }
                 else{
@@ -259,7 +275,6 @@ function update() {
         let currentTile = document.getElementById(row.toString() + '-' + c.toString());
         let letter = currentTile.innerText;
         let currentKey = document.getElementById(letter.toLowerCase());
-        console.log(currentKey);
         //Is it in the correct position?
         if (word[c] == letter) {
             if (currentKey.classList.contains("present")){
@@ -298,9 +313,13 @@ function update() {
     }
     row += 1; //start new row
     col = 0; //start at 0 for new row
-
-    if (correct == width || row == height) {
+    if (correct == width) {
         gameOver = true;
+        endMatch = true;
+    }
+    else if (row == height){
+        gameOver = true;
+        endMatch = false;
     }
     
 }

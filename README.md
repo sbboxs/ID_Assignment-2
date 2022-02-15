@@ -17,15 +17,15 @@ _To be completed_
 
 - Classes - main feature of website, users are able to play these games, which are based on the maths education theme chosen.
 
-- Wordle Game - 
+- Wordle Game - allow users to learn more 5 letter words and its definition by playing
   
-- Science Game - 
+- Science Game - allow users to explore more about different biology topics by playing
   
 - Math Game - 
 
 - Testimonials - requires login to add a testimonial, allow users to see and review our website.
 
-- Login - allows users to create and login to their accounts on our website.
+- Login & register - allows users to create and login to their accounts on our website.
 ## Features
 
 In this section, We will explain the features of my website and list down some additional features that could be implemented to make the website more functional and interactive.
