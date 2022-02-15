@@ -1,7 +1,7 @@
 @font-face {
   font-family: "BubbleGum";
-  src: url("/fonts/Bubblegum.eot") format("eot");
-  src: url("/fonts/Bubblegum.ttf") format("truetype"),
+  src: url("/fonts/Bubblegum.eot") format("eot"),
+    url("/fonts/Bubblegum.ttf") format("truetype"),
     url("/fonts/Bubblegum.woff") format("woff");
 }
 
