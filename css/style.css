@@ -94,9 +94,17 @@ footer {
   position: relative;
 }
 
+.login-link-btn,
+.register-link-btn,
+.home-link-btn {
+  color: rgb(63, 78, 211) !important;
+}
+
 .login-link-btn:hover,
-.register-link-btn:hover {
-  cursor: pointer;
+.register-link-btn:hover,
+.home-link-btn:hover {
+  cursor: pointer !important;
+  color: pink !important;
 }
 
 /* placeholder */
