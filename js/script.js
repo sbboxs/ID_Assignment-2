@@ -32,7 +32,7 @@ if(location.href.includes("quizgame") || location.href.includes("wordle") || loc
         $(".modal-header button").remove();
         $(".modal-body").html(`
         <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Please <a class="text-decoration-none login-link-btn">Login</a> to access this feature. If you don't have an existing account, <a class="text-decoration-none register-link-btn">Register</a> yourself now!</p>
-        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="text-decoration-none home-link-btn" href="index.html">here</a> to return to the home page</p>`)
+        <p class="text-center" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">Click <a class="text-decoration-none home-link-btn" href="index.html">here</a> to return to the home page</p>`);
         $("#modal-title").text("! Locked Feature !");
         $(".modal").modal({backdrop: "static", keyboard: false});
         $(".modal").modal("toggle");
@@ -54,7 +54,7 @@ $("#loginBtn, .login-link-btn").on("click", function (e) {
                     <p class="form__text ">
                         <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
                     </p>
-                </div>`)
+                </div>`);
             }
             $(".modal").modal("show");
             if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
@@ -81,7 +81,7 @@ $("#registerBtn, .register-link-btn").on("click", function (e) {
                     <p class="form__text ">
                         <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
                     </p>
-                </div>`)
+                </div>`);
             }
             $(".modal").modal("show");
             if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){

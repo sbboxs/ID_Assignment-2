@@ -11,7 +11,7 @@ $(document).ready(function() {
           "x-apikey": APIKEY,
           "cache-control": "no-cache"
         }
-    }
+    };
 
       
     $.ajax(settings).done(function (response) {
@@ -53,7 +53,7 @@ $(document).ready(function() {
                         </div>
                     </div>
                 </div>
-            </div>`
+            </div>`;
 
             $(".testimonial-list").append(testimonalCard);
 
@@ -90,7 +90,7 @@ $(document).ready(function() {
         
                             <div class="px-3 name-class-rating" id="newRatings">
                                 <p class="m-0 testimonial-selected-name new-testimonial-selected-name"></p>
-                                <div class="dropdown">
+                                <div class="dropdown classes-dropdown">
                                     <button type="button" class="btn btn-primary dropdown-toggle text-muted testimonial-selected-class new-class-btn" data-bs-toggle="dropdown">
                                         CLASSES
                                     </button>
@@ -177,7 +177,7 @@ $(document).ready(function() {
                         $(".new-card-body").removeClass("new-card-body");
         
                         let currentClass = $(".new-class-btn").text();
-                        $(".dropdown").remove();
+                        $(".classes-dropdown").remove();
                         $("#newRatings").removeAttr("id");
                         $(`<p class="m-0 text-muted testimonial-selected-class">${currentClass}</p>`).insertAfter($(".new-testimonial-selected-name"));
                         $(".new-testimonial-selected-name").attr("class", "m-0 testimonial-selected-name");
@@ -197,21 +197,21 @@ $(document).ready(function() {
 
                         let jsondata = {"username": username,"classes": currentClass, "ratings": ratingsNum, "review": reviewContent};
                         settings = {
-                        "async": true,
-                        "crossDomain": true,
-                        "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedutestimonial",
-                        "method": "POST",
-                        "headers": {
-                            "content-type": "application/json",
-                            "x-apikey": APIKEY,
-                            "cache-control": "no-cache"
-                        },
-                        "processData": false,
-                        "data": JSON.stringify(jsondata),
-                        "complete": function(){
-                            $(".modal").modal("toggle");
-                        }
-                        }
+                            "async": true,
+                            "crossDomain": true,
+                            "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedutestimonial",
+                            "method": "POST",
+                            "headers": {
+                                "content-type": "application/json",
+                                "x-apikey": APIKEY,
+                                "cache-control": "no-cache"
+                            },
+                            "processData": false,
+                            "data": JSON.stringify(jsondata),
+                            "complete": function(){
+                                $(".modal").modal("toggle");
+                            }
+                        };
 
                         $.ajax(settings).done(function (response) {
                             console.log(response);
@@ -240,7 +240,7 @@ $.fn.toggleStarRatings = function(){
     $(this).attr("class", "fas fa-star full-star");
     $(this).prevAll().attr("class", "fas fa-star full-star");
     $(this).nextAll().attr("class", "far fa-star empty-star");
-}
+};
 
 function emptyTestimonial() {
     if(!$("#star1").hasClass("full-star") || $(".new-class-btn").text().includes("CLASSES")){

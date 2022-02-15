@@ -26,7 +26,7 @@ $(document).ready(function () {
                         <p class="form__text ">
                             <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
                         </p>
-                    </div>`)
+                    </div>`);
                 }
                 $(".modal").modal("show");
                 if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
@@ -51,7 +51,7 @@ $(document).ready(function () {
                 "x-apikey": APIKEY,
                 "cache-control": "no-cache"
             }
-        }
+        };
 
         $.ajax(settings).done(function (response) {
             console.log(response);
@@ -67,7 +67,7 @@ $(document).ready(function () {
             }
             if (status) {
                 setFormMessage(loginForm, "success", "Login successful");
-                sessionStorage.setItem('username', loginUserName)
+                sessionStorage.setItem('username', loginUserName);
                 $(".modal").modal("toggle");
                 location.reload();
             }

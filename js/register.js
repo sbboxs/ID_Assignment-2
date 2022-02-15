@@ -30,7 +30,7 @@ $(document).ready(function () {
                         <p class="form__text ">
                             <a class="form__link" href="index.html" style="float:right;"><- Return to home</a>
                         </p>
-                    </div>`)
+                    </div>`);
                 }
                 $(".modal").modal("show");
                 if (location.href.includes("biology") || location.href.includes("english") || location.href.includes("classes") || location.href.includes("mathematics")){
@@ -68,17 +68,17 @@ $(document).ready(function () {
                 <h2 class="text-center w-100 mb-4" style="color:white;">Account Created Successfully</h2>`);
                 $(".modal-content").addClass("bg-transparent border-0");
             }
-        }
+        };
 
         $.ajax(settings).done(function (response) {
             console.log(response);
 
             $("#successBtn").on("click", function(){
                 location.reload();
-            })
+            });
             $(".modal").on('hidden.bs.modal', function() {
                 location.reload();
-            })
+            });
         });
     });
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
                         "x-apikey": APIKEY,
                         "cache-control": "no-cache"
                     }
-                }
+                };
         
                 $.ajax(settings).done(function (response) {
                     console.log(response);

@@ -14,7 +14,7 @@ window.onload = function(){
     randomWordGenerator();
     intialize();
     addKeyboardClicks();
-}
+};
 document.getElementById("reset").onclick = function(){
     location.reload();
 };
@@ -66,7 +66,7 @@ function wordDictionaryCheck(guessWord){
                 $(".modal-body").css("background-color", "#f8f4e4");
             };
             
-        })
+        });
     }
     else{
         keyboard = false;
@@ -82,7 +82,7 @@ function wordDictionaryCheck(guessWord){
                 console.log(validationStatus);
                 checkValidationStatus();   
             }
-        })
+        });
     }
     
 }
@@ -98,13 +98,13 @@ function guessWordGetter(){
         letterarray.push(currentTile.innerText);
         console.log(currentTile.innerText);
         }
-    var guessWord = to_string.concat(letterarray[0],letterarray[1],letterarray[2],letterarray[3],letterarray[4])
+    var guessWord = to_string.concat(letterarray[0],letterarray[1],letterarray[2],letterarray[3],letterarray[4]);
     return guessWord;
 }
 
 function checkValidationStatus(){
     if (validationStatus){
-        update()
+        update();
         if(gameOver){
             //End game of the game, display the correct word.
             $(".wordle-error-msg").removeClass("row-shake");
@@ -184,7 +184,7 @@ function intialize() {
             if (wordcount == 5){
                 guessWord = guessWordGetter();
                 console.log(guessWord);
-                wordDictionaryCheck(guessWord)
+                wordDictionaryCheck(guessWord);
             }
             else{
                 $(".wordle-error-msg").text("Must enter 5 letter");

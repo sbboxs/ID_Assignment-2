@@ -4,7 +4,7 @@ var organ_list = [
   "INTESTINES",
   "LUNGS",
   "STOMACH"
-]
+];
 
 let answer = '';
 let maxWrong = 6;
@@ -21,7 +21,7 @@ function handleGuess(chosenLetter) {
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
     document.getElementById(chosenLetter).setAttribute('disabled', true);
     $('#'+chosenLetter).addClass("disable");
-    console.log(chosenLetter)
+    console.log(chosenLetter);
     if (answer.indexOf(chosenLetter) >= 0) {
       guessedWord();
       checkIfGameWon();
@@ -87,7 +87,7 @@ window.onload = function(){
   document.getElementById('maxWrong').innerHTML = maxWrong;
   randomWord();
   guessedWord();
-}
+};
 
 document.getElementById("instruction").onclick = function(){
   $(".modal-body").html(`
