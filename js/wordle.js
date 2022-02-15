@@ -87,8 +87,6 @@ function wordDictionaryCheck(guessWord){
     
 }
 
-
-
 //Combine letter into word
 function guessWordGetter(){
     var letterarray = [];
