@@ -119,3 +119,8 @@ if (document.getElementById("wordleGameBtn") != null){
         location.href = "wordle.html";
     };
 }
+if (document.getElementById("scienceGameBtn") != null){
+    document.getElementById("scienceGameBtn").onclick = function() {
+        location.href = "sciencegame.html";
+    };
+}

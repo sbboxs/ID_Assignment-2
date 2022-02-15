@@ -267,12 +267,10 @@ function update() {
             if (currentKey.classList.contains("present")){
                 currentKey.classList.remove("present");
                 currentTile.classList.remove("present");
-                console.log("remove1");
             }
             else if (currentKey.classList.contains("absent")){
                 currentKey.classList.remove("absent");
                 currentTile.classList.remove("absent");
-                console.log("remove2");
             }
             currentKey.classList.add("correct");
             currentTile.classList.add("correct");
