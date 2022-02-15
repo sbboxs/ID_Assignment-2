@@ -1,57 +1,57 @@
-section{
-    text-align: center;
-    width:100%;
-    height:auto;
-    background-color: #f5d6e7;
+section {
+  text-align: center;
+  width: 100%;
+  height: auto;
+  background-color: #f5d6e7;
 }
-#organPic{
-    max-width: 30%;
-    max-height: 30%;
+#organPic {
+  max-width: 30%;
+  max-height: 30%;
 }
-.science-button button{
-    background-color: #c468c4;
-    border:none;
+.science-button button {
+  background-color: #c468c4;
+  border: none;
 }
-.science-button button:hover{
-    background-color:#c41876;
+.science-button button:hover {
+  background-color: #c41876;
 }
-.science-button button:active{
-    background-color:#801346;
+.science-button button:active {
+  background-color: #801346;
 }
 .keyboard-row {
-    display: flex;
-    justify-content: center;
-    width: 40%;
-    margin: 0 auto 8px;
-    touch-action: manipulation;
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
 }
-  
+
 .keyboard-row button {
-    font-family: inherit;
-    border: 0;
-    padding: 0;
-    margin-right: 6px;
-    height: 50px;
-    border-radius: 10%;
-    cursor: pointer;
-    user-select: none;
-    background-color: #c468c4;
-    color: rgb(255, 255, 255);
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  margin-right: 6px;
+  height: 50px;
+  border-radius: 10%;
+  cursor: pointer;
+  user-select: none;
+  background-color: #c468c4;
+  color: rgb(255, 255, 255);
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
 }
-.keyboard-row button:hover{
-    background-color:#c41876;
+.keyboard-row button:hover {
+  background-color: #c41876;
 }
-.keyboard-row button:active{
-      background-color:#801346;
-  }
-.keyboard-row .disable{  
-    background-color: grey;
+.keyboard-row button:active {
+  background-color: #801346;
 }
-.keyboard-row .disable:hover{  
-    background-color: grey;
+.keyboard-row .disable {
+  background-color: grey;
+}
+.keyboard-row .disable:hover {
+  background-color: grey;
 }
