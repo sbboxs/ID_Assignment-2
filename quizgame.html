@@ -63,21 +63,26 @@
         </nav>
     </header>
     <main>
-        <section class="game-container math-container">
-            <div class="equation">
-                <h1 id="first-num" class="display-2">1</h1>
-                <h1 id=eqn-sign class="display-2">+</h1>
-                <h1 id="second-num" class="display-2">1</h1>
-                <h1 id="equals" class="display-2">=</h1>
-                <h1 class="display-2">?</h1>
-                <h1 id="scoreboard" class="display-6">Score: <span id="scoreCount">0</span></h1>
-                <div class="lives-container"><img src="./assets/math_assets/heart.png" id="live1" class="hearts m-2 mt-3" alt="vector heart img"><img src="./assets/math_assets/heart.png" id="live2" class="hearts m-2 mt-3" alt="vector heart img"><img src="./assets/math_assets/heart.png" id="live3" class="hearts m-2 mt-3" alt="vector heart img"></div>
+        <section class="game-container math-container container">
+            <div class="row d-xs-flex-column">
+                <div class="equation col-lg-9 col-md-11 my-3 mx-auto">
+                    <h1 id="first-num" class="display-2">1</h1>
+                    <h1 id=eqn-sign class="display-2">+</h1>
+                    <h1 id="second-num" class="display-2">1</h1>
+                    <h1 id="equals" class="display-2">=</h1>
+                    <h1 class="display-2">?</h1>
+                    <h1 id="scoreboard" class="display-6">Score: <span id="scoreCount">0</span></h1>
+                    <div class="lives-container"><img src="./assets/math_assets/heart.png" id="live1" class="hearts m-2 mt-3 img-responsive" alt="vector heart img"><img src="./assets/math_assets/heart.png" id="live2" class="hearts m-2 mt-3 img-responsive" alt="vector heart img"><img src="./assets/math_assets/heart.png" id="live3" class="hearts m-2 mt-3 img-responsive" alt="vector heart img"></div>
+                </div>
+                <div class="ans col-lg-3">
+                    <div class="row">
+                        <h1 id="option1" class="display-2 col-lg-12 col-md-3 ms-lg-3 my-3 mx-auto">1</h1>
+                        <h1 id="option2" class="display-2 col-lg-12 col-md-3 ms-lg-3 my-3 mx-auto">2</h1>
+                        <h1 id="option3" class="display-2 col-lg-12 col-md-3 ms-lg-3 my-3 mx-auto">3</h1>
+                    </div>
+                </div>
             </div>
-            <div class="ans">
-                <h1 id="option1" class="display-2">1</h1>
-                <h1 id="option2" class="display-2">2</h1>
-                <h1 id="option3" class="display-2">3</h1>
-            </div>
+            
         </section>
     </main>
     <!--Footer-->
