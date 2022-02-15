@@ -11,7 +11,21 @@ _This project was done as an assignment for the Interactive Development module i
 In this section, we will go over our design process and design elements implemented.
 
 _To be completed_
+### Existing Features
 
+- Navigation bar - allows users to navigate between different pages of the website by clicking on each page's label.
+
+- Classes - main feature of website, users are able to play these games, which are based on the maths education theme chosen.
+
+- Wordle Game - allow users to learn more 5 letter words and its definition by playing
+  
+- Science Game - allow users to explore more about different biology topics by playing
+  
+- Math Game - 
+
+- Testimonials - requires login to add a testimonial, allow users to see and review our website.
+
+- Login & register - allows users to create and login to their accounts on our website.
 ## Features
 
 In this section, We will explain the features of my website and list down some additional features that could be implemented to make the website more functional and interactive.
@@ -49,21 +63,6 @@ In this section, We will explain the features of my website and list down some a
 
    If the user in the registration form has an account, they can press the "Already have an account? log in here!" button to proceed with the login form.
 
-### Existing Features
-
-- Navigation bar - allows users to navigate between different pages of the website by clicking on each page's label.
-
-- Classes - main feature of website, users are able to play these games, which are based on the maths education theme chosen.
-
-- Wordle Game - 
-  
-- Science Game - 
-  
-- Math Game - 
-
-- Testimonials - requires login to add a testimonial, allow users to see and review our website.
-
-- Login - allows users to create and login to their accounts on our website.
 
 ### Features Left to Implement
 
@@ -90,38 +89,60 @@ This section covers the testing of features and their intended output when a use
    _To be completed_
 
 2. Login:
-   1. Login button will be shown at the nav bar in every pages.
-   2. Try pressing the login button, a login form should pop up and you should be able to see 2 input box, one login button and an option "Don't have an account!Click me".
-   3. Try submit an empty form and press login and verify that an message of "Invalid username/password combination" will appear.
-   4. Try submit but keying wrong username/detail and verify that an message of "Invalid username/password combination" will appear.
-   5. Try pressing "Don't have an account?Click me" button and verify you will be sent to register form.
-   6. Try submit with all correct input and verify is the login form will close, login and register button on the nav bar will be replace with an icon and your username.
+   1. Login button will be shown on the navbar on every page.
+   2. Try pressing the login button and verify that a login form should pop up and you should be able to see 2 input boxes, one login button and an option "Don't have an account! Click me".
+   3. Try to submit an empty form and press login and verify that a message of "Invalid username/password combination" will appear.
+   4. Try to submit but keying wrong username/detail and verify that a message of "Invalid username/password combination" will appear.
+   5. Try pressing the "Don't have an account? Click me" button and verify you will be sent to the registration form.
+   6. Try to submit with all correct input and verify if the login form will close, login and register button on the navbar will be replaced with an icon and your username.
+   7. Try pressing on the icon and verifying that an option to log out will show, upon pressing log out you should be log out from the account and the navbar should reset back to default.
 
 3. Register:
+   1. Register button will be shown at the navbar on every page.
+   2. Try pressing the register button and verify that a registration form should pop up and you should be able to see 4 input boxes, username,  email address, password and confirm password.
+   3. Try pressing each input box, but don't key in anything and click somewhere else in the popup and verify that an error message should show below each (other than confirm password) input box.
+   4. Try entering < 8 characters in length in the username input box and verifying that an error message "Username must be at least 8 characters in length." is shown.
+   5. Try entering at least an 8 characters username and verify that the error message disappears.
+   6. Try to enter any letter in the email address input box and verify that an error message"Please enter a valid email address" 
+   7. Try to enter a valid email address and verify that the error message disappears.
+   8. Try entering < 8 characters in length in the password input box and verify that an error message "Password must be at least 8 characters in length is shown.
+   9. Try entering 8 letter / 8 number for password and verify that an error message "Password must contain at least a capital letter and a number is shown.
+   10. Try to enter a password that meets all the requirements and verify that the error message disappears.
+   11. Try entering anything different from input in password, in the confirm password input box and verify that an error message "Password is not matched" is shown.
+   12. Try to enter the exact same thing you input in the password to confirm the password and verify that the error message disappears.
+   13. Try to submit an empty form / incomplete form and verify that you are not proceeding to the next stage.
+   14. Try to press the "Already have an account? log in here!" button and verify that you are directed to the login form.
 
 4. Classes:
    1. Wordle:
       1. Go to English Class and start playing the wordle game.
-      2. Ensure you can see a wordle title and two button below the title, a 5 row 5 column board and a in game keyboard below the board.
-      3. Please note that, due to the high lagency of api, please wait for at least 3 second before start testing of the game.
-      4. Try click on the definition button and verify that a pop up will show the definition of the word to be guess. By clicking the cross button or anywhere outside pop up will close it.
-      5. Try lick on the reset button, and verify that is the page will be reload, everything should be reset to default and a new word to be guess is generated.
-      6. Try input letter [A - z] using in game keyboard or your own keyboard device, and verify is the letter input is show in the specific tile of the board.
-      7. Try pressing enter when number of letter is less than 5 and verify that is an error message "Must enter 5 letter" show below title and is the current row of the board will have a shake animation.
-      8. Try pressing enter when number of letter is 5 and verify that if the combination of the 5 letter is not a valid word, an error message will be shown "Please enter a valid word", and the current row will have a shake animation.
-      9. Try pressing enter, if the combination of 5 letter word is valid and verify that all the 5 tile color will changed. If green means letter is in the same position as the word to be guess. If yellow means the letter is in the word to be guess but not the same position. If grey means the letter is not exist in the word to be guess.
-      10. Try used out all the 5 chances to input valid word and verify that the word to be guess will be show below the "WORDLE" title. Game will be end and only be able to continue if user press reset button.
-      11. Try guessed the word and verify that the word to be guess will also be show below the "WORDLE" title. Game will be end and only by pressing reset button then will start a new round.
+      2. Ensure you can see a wordle title and two-button below the title, a 5 row 5 column board and an in-game keyboard below the board.
+      3. Please note that, due to the high latency of API, please wait for at least 3 seconds before starting testing the game.
+      4. Try clicking on the definition button and verify that a pop up is show the definition of the word to be guessed. By clicking the cross button or anywhere outside pop up will close it.
+      5. Try lick on the reset button, and verify that is the page will be reloaded, everything should be reset to default and a new word to be guessed is generated.
+      6. Try input letter [A - z] using an in-game keyboard or your own keyboard device, and verify if the letter input is shown in the specific tile of the board.
+      7. Try pressing enter when the number of letters is less than 5 and verify that is an error message "Must enter 5 letters" shown below the title and if the current row of the board has a shake animation.
+      8. Try pressing enter when the number of letters is 5 and verify that if the combination of the 5 letters is not a valid word, an error message will be shown "Please enter a valid word", and the current row will have a shake animation.
+      9. Try pressing enter, if the combination of 5 letter word is valid and verify that all the 5 tile colour was changed. If green means letter is in the same position as the word to be guessed. If yellow means the letter is in the word to be guessed but not the same position. If grey means the letter does not exist in the word to be guessed.
+      10. Try using out all the 5 chances to input a valid word and verify that the word to be guessed will be shown below the "WORDLE" title. The game will end and only be able to continue if the user presses the reset button.
+      11. Try to guess the word and verify that the word to be guessed will also be shown below the "WORDLE" title. The game will end and only by pressing the reset button then will start a new round.
    
    2. Science Game:
-      1. Update soon.
+      1. Go to Biology class and start learning human anatomy, and verify you are directed to the science game.
+      2. In the science game, you should see the title"Name The Picture", follow by 2 buttons "Instruction and Reset", followed by an organ picture, the number of wrong guesses, a place for a word to be guessed and a keyboard.
+      3. Try pressing any key on the keyboard and verify that the key will turn grey and disable. If the letter is in the name, the letter should appear in the same position as the name. 
+      4. Try pressing the instruction button and verify that a pop-out will appear with the header of "INSTRUCTION" and a total of 4 step instructions.
+      5. Try pressing the reset button and verify that the page has been reloaded, a new organ picture will show (or the same picture due to randomisation). The wrong guesses, words to be guessed and keyboard should also be reset.
+      6. Try guessing the name of the organ picture and verify that a pop up will show with a green header "End of the game" follow by congrats, the correct name and a reminder to press the reset button to start a new round.
+      7. Try using out all the wrong guesses and verify that a pop up will show with a red header "End of the game" followed by "Oh no, you ran out of chances!", the correct name of the organ picture and a reminder to press reset button to start a new round.
+      8. After the end of the game, try pressing any key on the keyboard and verify that the page will be reloaded and everything will be reset.
 
    3. Math Game (Practice):
       1. Go to Mathematics class and start playing the Practice game.
       2. In the math game, you should be able to see 3 hearts which represents the number of mistakes that can be made, an equation with the answer appear as "?", a score which will plus 1 whenever u answer correctly and 3 answer option to be select but only 1 is the correct answer.
       3. Try by pressing the wrong answer option and verify that 1 out of 3 hearts will be deleted, 
-      4. Try used out all 3 chances and verify that when all the 3 hearts disappear, game will end. A pop up will show " Well Done!" and the total number of points you scored.
-      5. Try by  pressing the correct answer option and verify that the point score will be plus one, and the next equation with the 3 new answer options will be shown.
+      4. Try to use out all 3 chances and verify that when all the 3 hearts disappear, the game will end. A pop up will show " Well Done!" and the total number of points you scored.
+      5. Try by pressing the correct answer option and verifying that the point score will be plus one, and the next equation with the 3 new answer options will be shown.
       6. Please note that the Game will only end when all 3 hearts disappear.
 
 5. Testimonials:

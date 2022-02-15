@@ -1,12 +1,8 @@
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
-const eqnSign = document.getElementById("eqn-sign");
 let ans = 0;
 let count = 0;
-const live1 = document.getElementById("live1");
-const live2 = document.getElementById("live2");
-const live3 = document.getElementById("live3");
 
 function createEqn(){
     let num1 = Math.floor(Math.random() * 15);
@@ -130,10 +126,10 @@ function EndQuiz() {
     
     $("#quizModal").on("click", function(){
         location.reload();
-    })
+    });
     $(".modal").on('hidden.bs.modal', function() {
         location.reload();
-    })
+    });
     
 }
 option1.addEventListener("click", function(){

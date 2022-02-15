@@ -8,18 +8,12 @@ main {
   background-image: url(../assets/showcase.svg);
   padding-bottom: 15%;
 }
-.math-container {
-  display: grid;
-  grid-template-columns: 80% 20%;
-}
 .equation {
   position: relative;
   background-color: white;
   text-align: center;
   padding-top: 15%;
   padding-bottom: 15%;
-  margin: 12px;
-  margin-bottom: 0;
   border-radius: 4px;
 }
 .equation h1 {
@@ -31,8 +25,6 @@ main {
   text-align: center;
   color: aliceblue;
   border-radius: 5px;
-  margin-top: 10px;
-  margin-right: 12px;
 }
 #scoreboard {
   position: absolute;
@@ -42,11 +34,10 @@ main {
 .lives-container {
   position: absolute;
   top: 0;
-  left: 0;
 }
 .hearts {
-  height: 2rem;
-  width: 2rem;
+  max-width: 5.5%;
+  float: left;
 }
 #option1 {
   background-color: red;
