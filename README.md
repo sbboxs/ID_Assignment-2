@@ -66,7 +66,7 @@ In this section, We will explain the features of we website and list down some a
 - More features for subject classes - add more features and games for users to explore and play around with.
   - English - a story of the day for users to read and a platform for users to share their essay writing.
   - Science - teach users basic knowledge of other biology topics by adding more science-related pictures to the science game to enhance their understanding.
-  - Math - create a timed version of the current quiz game and a leaderboard feature, to stimulate healthy competition better growth in mathematics.
+  - Math - create a timed version of the current quiz game and a leaderboard feature, to stimulate healthy competition and better growth in mathematics.
 
 ## Technologies Used
 
@@ -151,16 +151,16 @@ This section covers the testing of features and their intended output when a use
       6. Press the reset button and verify that the page has been reloaded, a new organ picture will show (or the same picture due to randomisation). The wrong guesses, words to be guessed and keyboard will also be reset.
       7. Guess the name of the organ picture and verify that a modal pop up will show with a green header "End of the game" follow by congrats, the correct name and a reminder to press the reset button to start a new round.
       8. Guess incorrectly 6 times and verify that a modal pop up will show with a red header "End of the game" followed by "Oh no, you ran out of chances!", the correct name of the organ picture and a reminder to press reset button to start a new round.
-      9. After the end of the game, press any key on the keyboard and verify that the page will be reloaded and everything will be reset.
+      9. At the end of the game, press any key on the keyboard and verify that the page will be reloaded and everything will be reset.
 
-   3. Math Game (Practice):
+   3. Math Game:
 
       1. Go to "Mathematics" page by clicking on the "Learn" button inside the "Mathematics" card.
       2. Click on the "Start Learning" button to go to the Math Quiz game.
       3. Ensure 3 hearts which represents the number of lives, an equation with the answer appearing as "?", a score which will add 1 whenever answered correctly and 3 answer option with 1 correct option are all present.
       4. Press the wrong answer option and verify that the hearts are deleted from right to left.
       5. Guess incorrectly 3 times and verify that when all the 3 hearts disappear, the game will end. A pop up will show " Well Done!" and the total number of points scored.
-      6. Try by pressing the correct answer option and verify that the point score will be plus one, and the next equation with 3 new answer options will be shown.
+      6. Press the correct answer option and verify that the point score will be plus one, and the next equation with 3 new answer options will be shown.
       7. Please note that the game will only end when all 3 hearts disappear.
 
 5. Testimonials:
