@@ -1,6 +1,5 @@
 $(document).ready(function() {
     const APIKEY = "61d277b1ccd0211b320894cd";
-
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -13,7 +12,6 @@ $(document).ready(function() {
         }
     };
 
-      
     $.ajax(settings).done(function (response) {
         console.log(response);
         $(".testimonial-list").empty();
@@ -23,7 +21,6 @@ $(document).ready(function() {
             let testimonialRating = response[i].ratings;
             let testimonialClasses = response[i].classes;
             let testimonialReview = response[i].review;
-
             let testimonalCard = `
             <div class="col-lg-4 mb-3">
                 <div class="card border-0">
@@ -56,7 +53,6 @@ $(document).ready(function() {
             </div>`;
 
             $(".testimonial-list").append(testimonalCard);
-
             $(`.temp-star-rating i:nth-child(${testimonialRating})`).toggleStarRatings();
             $(".temp-star-rating").attr("class", "m-0 text-left star-rating");
         }
@@ -153,6 +149,7 @@ $(document).ready(function() {
                     "cursor": "pointer",
                     "padding": "0.1rem"
                 });
+
                 $(".class-dropdown-options a").css({
                     "text-decoration": "none",
                 });
@@ -194,7 +191,6 @@ $(document).ready(function() {
 
                         let ratingsNum = $(".full-star:last").index() + 1;
                         let username = sessionStorage.getItem("username");
-
                         let jsondata = {"username": username,"classes": currentClass, "ratings": ratingsNum, "review": reviewContent};
                         settings = {
                         "async": true,

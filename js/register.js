@@ -14,7 +14,6 @@ $(document).ready(function () {
     const createAccountForm = document.querySelector("#createAccount");
     const APIKEY = "61d277b1ccd0211b320894cd";
     //If create account, hidden login form and show login form
-
     $("#linkLogin").on("click", function (e) {
         e.preventDefault();
 

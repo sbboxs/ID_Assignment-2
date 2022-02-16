@@ -62,6 +62,7 @@ $("#loginBtn, .login-link-btn").on("click", function (e) {
         }
     });
 });
+
 $("#registerBtn, .register-link-btn").on("click", function (e) {
     e.preventDefault();
 
@@ -95,26 +96,31 @@ if (document.getElementById("biologyBtn") != null){
         location.href = "biology.html";
     };
 }
+
 if (document.getElementById("englishBtn") != null){
     document.getElementById("englishBtn").onclick = function(){
         location.href = "english.html";
     };
 }
+
 if (document.getElementById("mathBtn") != null){
     document.getElementById("mathBtn").onclick = function(){
         location.href = "mathematics.html";
     };
 }
+
 if (document.getElementById("mathPracticeBtn") != null){
     document.getElementById("mathPracticeBtn").onclick = function() {
         location.href = "quizgame.html";
     };
 }
+
 if (document.getElementById("wordleGameBtn") != null){
     document.getElementById("wordleGameBtn").onclick = function() {
         location.href = "wordle.html";
     };
 }
+
 if (document.getElementById("scienceGameBtn") != null){
     document.getElementById("scienceGameBtn").onclick = function() {
         location.href = "sciencegame.html";
