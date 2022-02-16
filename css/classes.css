@@ -12,6 +12,14 @@
   border: 3px solid white;
 }
 
+.classes-card {
+  transition: 0.4s ease;
+}
+
+.classes-card:hover {
+  transform: scale(1.04);
+}
+
 .card-header {
   background-color: #ffa2a2;
 }
@@ -24,6 +32,7 @@
   font-family: Verdana, sans-serif;
   font-weight: bold;
   color: #4c4646;
+  line-height: 1.5em;
 }
 
 .learn-class {
