@@ -1,3 +1,4 @@
+//Question
 var organ_list = [
   "BRAIN",
   "HEART",
@@ -6,24 +7,30 @@ var organ_list = [
   "STOMACH"
 ];
 let answer = '';
-let maxWrong = 6;
-let mistakes = 0;
+let maxWrong = 6; //Maximum number of wrong
+let mistakes = 0; //Always set mistakes make to 0
 let guessed = [];
 let wordStatus = null;
 var correct;
+
+//Get a random word from organ_list
 function randomWord() {
   answer = organ_list[Math.floor(Math.random() * organ_list.length)];
   updateOrganPicture();
 }
+
+//Check for the letter input
 function handleGuess(chosenLetter) {
   if(mistakes!==maxWrong && correct!== maxWrong){
     guessed.indexOf(chosenLetter) === -1 ? guessed.push(chosenLetter) : null;
-    document.getElementById(chosenLetter).setAttribute('disabled', true);
-    $('#'+chosenLetter).addClass("disable");
-    console.log(chosenLetter);
+    document.getElementById(chosenLetter).setAttribute('disabled', true); 
+    $('#'+chosenLetter).addClass("disable"); //Disable the letter
+    //If letter input in the word
     if (answer.indexOf(chosenLetter) >= 0) {
       guessedWord();
-      checkIfGameWon();
+      checkIfGameWon(); 
+
+    //If not in the word
     } else if (answer.indexOf(chosenLetter) === -1) {
       mistakes++;
       console.log(mistakes);
@@ -31,17 +38,22 @@ function handleGuess(chosenLetter) {
       checkIfGameLost();
     } 
   }
+  
+  //Call reset if end of game prevent from more input
   else{
     reset();
   }
 }
 
+//Get the picture that related to the word chosen
 function updateOrganPicture() {
   index = organ_list.indexOf(answer);
   $("#organPicContainer").append(`<img id='organPic' src="./assets/biology_assets/human-anatomy/${index}.png" alt="science game pics">`);
 }
 
+//Check if won when input correct letter
 function checkIfGameWon() {
+  //If win show end game pop up
   if (wordStatus === answer) {
     correct = 6;
     $(".modal-body").html(`
@@ -56,7 +68,9 @@ function checkIfGameWon() {
     }
 }
 
+//Check if lose when input wrong letter
 function checkIfGameLost() {
+  //If lose show end game pop up
   if (mistakes === maxWrong) {
     $(".modal-body").html(`
     <div class="my-4 text-center" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5;">
