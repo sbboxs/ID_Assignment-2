@@ -126,3 +126,8 @@ if (document.getElementById("scienceGameBtn") != null){
         location.href = "sciencegame.html";
     };
 }
+if (document.getElementById("getStartedBtn") != null){
+    document.getElementById("getStartedBtn").onclick = function() {
+        location.href = "classes.html";
+    };
+}
