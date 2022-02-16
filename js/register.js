@@ -13,7 +13,8 @@ function clearInputError(inputElement) {
 $(document).ready(function () {
     const createAccountForm = document.querySelector("#createAccount");
     const APIKEY = "61d277b1ccd0211b320894cd";
-    //If create account, hidden login form and show login form
+
+    //Go to login modal from register modal
     $("#linkLogin").on("click", function (e) {
         e.preventDefault();
 
@@ -23,6 +24,7 @@ $(document).ready(function () {
             success: function (data) {
                 $(".modal-body").html(data);
                 $("#modal-title").text("Login");
+                // Displaying locked features modal
                 if ($(".modal").attr("id") == "lockedModal"){
                     $("form").append(`
                     <div class="my-4 text-center form__input-group">
@@ -61,6 +63,7 @@ $(document).ready(function () {
             "processData": false,
             "data": JSON.stringify(jsondata),
             "success": function () {
+                //success modal
                 $(".modal-content").html(`
                 <button type="button" class="btn-close" id="sucessBtn" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;color:white;"></button>
                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px; margin: 0 auto;"    autoplay></lottie-player>
@@ -81,6 +84,7 @@ $(document).ready(function () {
         });
     });
 
+    // Input validation and database checking
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
             //If input does not pass validation, set and display the new error messaage

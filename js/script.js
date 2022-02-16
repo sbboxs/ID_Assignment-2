@@ -1,5 +1,7 @@
+// When user is logged in
 if(sessionStorage.getItem("username") != null) {
     $(".login-signup-btns").empty();
+    // Profile pic and username in all navbar
     $(".login-signup-btns").html(`
     <li class="nav-item">
         <p style="padding-top: 0.8rem;">Welcome <span id="currentUser"></span>
@@ -24,7 +26,9 @@ if(sessionStorage.getItem("username") != null) {
         sessionStorage.removeItem("username");
         location.reload();
     });
-} else if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
+}
+// Displaying locked features modal on game pages
+else if(location.href.includes("quizgame") || location.href.includes("wordle") || location.href.includes("science") || location.href.includes("Science")){
     $(".modal").attr("id", "lockedModal");
     $(".modal-header button").remove();
     $(".modal-body").html(`
@@ -35,6 +39,7 @@ if(sessionStorage.getItem("username") != null) {
     $(".modal").modal("toggle");
 }
 
+// Enabling login button
 $("#loginBtn, .login-link-btn").on("click", function (e) {
     e.preventDefault();
 
@@ -63,6 +68,7 @@ $("#loginBtn, .login-link-btn").on("click", function (e) {
     });
 });
 
+// Enabling Register button
 $("#registerBtn, .register-link-btn").on("click", function (e) {
     e.preventDefault();
 
@@ -90,6 +96,8 @@ $("#registerBtn, .register-link-btn").on("click", function (e) {
         }
     });
 });
+
+// Enabling navigation in classes page and its related pages
 
 if (document.getElementById("biologyBtn") != null){
     document.getElementById("biologyBtn").onclick = function(){

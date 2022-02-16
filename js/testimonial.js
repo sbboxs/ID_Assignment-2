@@ -1,5 +1,7 @@
 $(document).ready(function() {
     const APIKEY = "61d277b1ccd0211b320894cd";
+
+    // Getting existing testimonials
     let settings = {
         "async": true,
         "crossDomain": true,
@@ -16,6 +18,7 @@ $(document).ready(function() {
         console.log(response);
         $(".testimonial-list").empty();
 
+        // Adding all existing testimonials to website html
         for(i=0; i<response.length; i++){
             let testimonialUserName = response[i].username;
             let testimonialRating = response[i].ratings;
@@ -57,7 +60,9 @@ $(document).ready(function() {
             $(".temp-star-rating").attr("class", "m-0 text-left star-rating");
         }
 
+        // Apply posting new testimonial to website feature
         if(sessionStorage.getItem("username").length != 0){
+            // Create add new testimonial button
             $(".testimonial-list").append(`
             <div class="col-lg-4 mb-3 text-center mt-4 add-testimonial-pic-container">
                 <img src="./assets/testimonial_assets/addtestimonial.svg" id="addTestimonialPic" style="max-height: 25vh; opacity: 80%;" alt="add button">
@@ -75,6 +80,7 @@ $(document).ready(function() {
 
             $(".container-description").remove();
 
+            // Creating new testimonial
             $("#addTestimonialPic").on("click", function(){
                 let content = `
                 <div class="col-lg-4 mb-3">
@@ -157,6 +163,7 @@ $(document).ready(function() {
                 $("#addTestimonialPic").hide();
             });
         
+            // Making new testimonial post static and posting it to database
             if($("#testimonialSubmitBtn") != null) {
                 $("body").on("click", "#testimonialSubmitBtn", function(){
                     if($("#star1").hasClass("full-star") && !$(".new-class-btn").text().includes("CLASSES")){
@@ -189,6 +196,7 @@ $(document).ready(function() {
                         $(".new-review-content").append(`<p class="mb-0 review-text">${reviewContent}</p>`);
                         $(".new-review-content").attr("class", "blockquote");
 
+                        // Posting to restdb database
                         let ratingsNum = $(".full-star:last").index() + 1;
                         let username = sessionStorage.getItem("username");
                         let jsondata = {"username": username,"classes": currentClass, "ratings": ratingsNum, "review": reviewContent};
@@ -232,12 +240,14 @@ $(document).ready(function() {
     });
 });
 
+// Allow user to hover over rating stars and change them
 $.fn.toggleStarRatings = function(){
     $(this).attr("class", "fas fa-star full-star");
     $(this).prevAll().attr("class", "fas fa-star full-star");
     $(this).nextAll().attr("class", "far fa-star empty-star");
 }
 
+// Error checking for incomplete submitted post
 function emptyTestimonial() {
     if(!$("#star1").hasClass("full-star") || $(".new-class-btn").text().includes("CLASSES")){
         $("#newCard").addClass("card-shake");

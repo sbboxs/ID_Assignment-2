@@ -1,3 +1,4 @@
+// Create a custom error message
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");
     messageElement.textContent = message;
@@ -5,18 +6,22 @@ function setFormMessage(formElement, type, message) {
     messageElement.classList.add(`form__message--${type}`);
 }
 
+// Login
 $(document).ready(function () {
     const loginForm = document.querySelector("#login");
     const APIKEY = "61d277b1ccd0211b320894cd";
-    //If create account, hidden login form and show login form
+
+    // Open register modal from login modal
     $("#linkCreateAccount").on("click", function (e) {
         e.preventDefault();
+
         $.ajax({
             url: 'register.html',
             dataType: 'text',
             success: function (data) {
                 $(".modal-body").html(data);
                 $("#modal-title").text("Register");
+                // Displaying additional link on locked features modal
                 if ($(".modal").attr("id") == "lockedModal"){
                     $("form").append(`
                     <div class="my-4 text-center form__input-group">
@@ -37,7 +42,7 @@ $(document).ready(function () {
     loginForm.addEventListener("submit", e => {
         e.preventDefault();
 
-        // Perform your AJAX/Fetch login
+        // Get account details from API
         let settings = {
             "async": true,
             "crossDomain": true,
@@ -62,6 +67,7 @@ $(document).ready(function () {
                     break;
                 }
             }
+            // Checking if login successful
             if (status) {
                 setFormMessage(loginForm, "success", "Login successful");
                 sessionStorage.setItem('username', loginUserName);

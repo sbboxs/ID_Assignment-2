@@ -14,6 +14,7 @@ function createEqn(){
     let eqnArray = ['+', '-', 'X', '&#247'];
     let multiplier = 255;
 
+    // Initiating an equation answer based on the operator chosen
     const randomSign = eqnArray[Math.floor(Math.random() * eqnArray.length)];
     document.getElementById("eqn-sign").innerHTML = randomSign;
     if(randomSign == '+'){
@@ -30,6 +31,7 @@ function createEqn(){
         fakeNum2 = Math.floor(Math.random() * multiplier);
         ans = num1 * num2;
     } else if(randomSign == '&#247'){
+        // Checking for divide by 0 error and dvisibility
         if (num1 > num2){
             if (num2 == 0){
                 while(num2 == 0){
@@ -66,6 +68,7 @@ function createEqn(){
             ans = num1 / num2;
         }
     }
+    // Checking if the dummy options are the same as answer
     if (ans == fakeNum1 || ans == fakeNum2 || fakeNum1 == fakeNum2){
         while (ans == fakeNum1 || fakeNum1 == fakeNum2 || ans == fakeNum2){
             if(randomSign == '+' || randomSign == '&#247'){
@@ -104,6 +107,8 @@ function createEqn(){
     console.log(ans);
     console.log(fakeNum1);
     console.log(fakeNum2);
+
+    // Randomizing options
     while(randomizeArray.length != ansArray.length){
         let randomOption = ansArray[Math.floor(Math.random() * ansArray.length)];
         if (!randomizeArray.includes(randomOption)){
@@ -116,6 +121,8 @@ function createEqn(){
     document.getElementById("option2").innerHTML = randomizeArray[1];
     document.getElementById("option3").innerHTML = randomizeArray[2];
 }
+
+// Pop-up modal to show end screen
 function EndQuiz() {
     $(".modal-content").html(`
     <button type="button" class="btn-close" id="quizModal" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
@@ -132,6 +139,8 @@ function EndQuiz() {
     });
     
 }
+
+// Click triggers for generating new equations, calculating score and lives
 option1.addEventListener("click", function(){
     if(option1.innerHTML == ans){
         count += 1;
