@@ -1,4 +1,4 @@
-# ID Assignment 02: Mathematics Educational Web Application owo
+# ID Assignment 02: Mochii Edu Educational Web Application
 
 This project is a collaborative effort between 3 year-1 polytechnic students to create an educational web application for children, aged 7-12, to smoothly interact and play with. The website's purpose is to give children an alternative way to learn while having fun through the use of simple games. The contents of the website include a home page, an about page to briefly explain our website, a testimonial page where users can post their reviews and opinions, and a classes page for our users to access the our educational games.
 
