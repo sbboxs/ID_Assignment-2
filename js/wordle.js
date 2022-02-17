@@ -69,9 +69,13 @@ function wordDictionaryCheck(guessWord){
     //Ensure definition only difine for only one time
     if (gameStatus == 0){
         $.ajax(settings).done(function (response) {
-            if (gameStatus == 0 ){
+            if (gameStatus == 0 && response.valid){
+                console.log(response.valid)
                 wordDefinition = response.definition;//Get the definition of the word
                 gameStatus = 1;
+            }
+            else{
+                location.reload();
             }
             document.getElementById("definition").onclick = function(){
                 $(".modal-body").html(`
