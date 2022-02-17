@@ -183,7 +183,11 @@ An additional feature we added to our website's responsiveness is the navigation
 ### Bugs & Issues
 
 - Mobile issue: Login/Register features not working in all the games' pages
+
   - When loading the website on a smartphone, the locking feature of the games when the user is not logged in does not work properly. The login and register button on those pages also do not work. However, the game's functionality is still perfect despite this mobile-only error.
+
+- External API usage limit issue: Wordle english game limited usage each month
+  - The Wordle english game uses an external API from RapidAPI and because it is a free plan, the API has a 750 word limit usage per month. With this restriction and due to the API needing to get multiple times each time a game is ran, the game does not have a long lifespan each month.
 
 ## Credits
 
