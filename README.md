@@ -191,8 +191,8 @@ An additional feature we added to our website's responsiveness is the navigation
 
 - The design and layout of the website were inspired by [Educandy](https://www.educandy.com/) and [IXL](https://sg.ixl.com/)
 
-1. For the wordle game, we received inspiration from YouTuber, Kenny Yip Coding'video. Click [here](https://www.youtube.com/watch?v=ckjRsPaWHX8) to see the video.
-2. For the science game, we received inspiration from YouTuber, Science and Technology'video. Click [here](https://www.youtube.com/watch?v=dgvyE1sJS3Y###) to see the video.
+1. For the wordle game, we received inspiration from YouTuber, Kenny Yip Coding's video. Click [here](https://www.youtube.com/watch?v=ckjRsPaWHX8) to see the video.
+2. For the science game, we received inspiration from YouTuber, Science and Technology's video. Click [here](https://www.youtube.com/watch?v=dgvyE1sJS3Y###) to see the video.
 3. For the math quiz game, we received inspiration from YouTuber, codefoxx's video. Click [here](https://www.youtube.com/watch?v=Uw9wc5wm_mw&t=524s&ab_channel=codefoxx) to see the video.
 4. For the login feature, we received inspiration from YouTuber, dcode's video. Click [here](https://www.youtube.com/watch?v=3GsKEtBcGTk) to see the video.
 
