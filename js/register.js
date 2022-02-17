@@ -74,6 +74,7 @@ $(document).ready(function () {
 
         $.ajax(settings).done(function (response) {
             console.log(response);
+            sessionStorage.setItem("username", userName);
 
             $("#successBtn").on("click", function(){
                 location.reload();
