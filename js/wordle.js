@@ -1,3 +1,5 @@
+// With reference to Kenny Yip Coding's video, https://www.youtube.com/watch?v=ckjRsPaWHX8&ab_channel=KennyYipCoding
+
 var height = 5; //number of guesses
 var width = 5; //length of the word
 var row = 0; //current guess (attempt #)

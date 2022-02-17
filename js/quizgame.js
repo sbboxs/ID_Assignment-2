@@ -1,3 +1,5 @@
+// With reference to codefoxx's video, https://www.youtube.com/watch?v=Uw9wc5wm_mw&t=524s&ab_channel=codefoxx
+
 const option1 = document.getElementById("option1");
 const option2 = document.getElementById("option2");
 const option3 = document.getElementById("option3");
