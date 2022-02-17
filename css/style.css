@@ -73,13 +73,13 @@ footer {
   padding: 0.5em;
   font-size: 8pt;
   text-decoration: none;
-  color: #4c4646;
+  color: #4C4646;
 }
 
 .footer-link:hover {
   padding: 0.5em;
   font-size: 8pt;
-  color: #4c4646;
+  color: #4C4646;
   text-decoration: underline;
   text-decoration-color: #4c4646;
   text-underline-offset: 5px;
@@ -87,7 +87,7 @@ footer {
 }
 
 .footer-link:visited {
-  color: #4c4646;
+  color: #4C4646;
 }
 
 .footer-copyright {

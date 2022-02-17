@@ -2,18 +2,18 @@ section {
   text-align: center;
   width: 100%;
   height: auto;
-  background-color: #f5d6e7;
+  background-color: #F5D6E7;
 }
 #organPic {
   max-width: 30%;
   max-height: 30%;
 }
 .science-button button {
-  background-color: #c468c4;
+  background-color: #C468C4;
   border: none;
 }
 .science-button button:hover {
-  background-color: #c41876;
+  background-color: #C41876;
 }
 .science-button button:active {
   background-color: #801346;
@@ -41,14 +41,14 @@ section {
   text-transform: uppercase;
 }
 .keyboard-row button:hover {
-  background-color: #c41876;
+  background-color: #C41876;
 }
 .keyboard-row button:active {
   background-color: #801346;
 }
 .keyboard-row .disable {
-  background-color: grey;
+  background-color: #666;
 }
 .keyboard-row .disable:hover {
-  background-color: grey;
+  background-color: #666;
 }

@@ -9,7 +9,7 @@
 
 .form__message--error {
   font-family: Arial, Helvetica, sans-serif;
-  color: #cc0000;
+  color: #CC0000;
 }
 
 .form__input:focus {
@@ -18,24 +18,24 @@
 }
 
 .form__input--error {
-  color: #cc0000;
-  border: 2px solid #cc0000;
+  color: #CC0000;
+  border: 2px solid #CC0000;
 }
 
 .form__input-error-message {
   font-family: Arial, Helvetica, sans-serif;
   margin-top: 0.5rem;
   font-size: 0.85rem;
-  color: #cc0000;
+  color: #CC0000;
 }
 
 .form__button {
-  background-color: #ffd1d1;
+  background-color: #FFD1D1;
   color: white;
 }
 
 .form__button:hover {
-  background-color: #ff6075;
+  background-color: #FF6075;
   color: black;
 }
 

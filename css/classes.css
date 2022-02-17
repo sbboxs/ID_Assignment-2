@@ -26,16 +26,16 @@
 }
 
 .card-header {
-  background-color: #ffa2a2;
+  background-color: #FFA2A2;
 }
 
 .card-body {
-  background-color: #ffebeb;
+  background-color: #FFEBEB;
 }
 
 .card-text {
   font-family: Verdana, sans-serif;
-  color: #4c4646;
+  color: #4C4646;
   line-height: 1.5em;
 }
 
