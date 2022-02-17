@@ -101,11 +101,24 @@ window.onload = function(){
   document.getElementById('maxWrong').innerHTML = maxWrong;
   randomWord();
   guessedWord();
+  $(".modal-body").html(`
+  <divclass="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">
+  <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
+  <p>1. Once you start the game, you will have to guess a random word, based on the picture.</p>
+  <p>2. If you are unable to guess the correct alphabets for the word, you will cause a fail in the round. There will be a total of 6 fails.</p>
+  <p>3. Each key will be disable and turn grey after pressed.</p>
+  <p>4. Failure to guess the word before the 6th fail will cause you to lose the round.</p>
+  <p class="text-center">Good luck and have fun!</p>
+  </div>`);
+  $(".modal").modal("toggle");
+  $(".modal-title").text("Instruction");
+  $(".modal-body").css("background-color", "#f8f4e4");
 };
 
 document.getElementById("instruction").onclick = function(){
   $(".modal-body").html(`
   <divclass="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">
+  <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
   <p>1. Once you start the game, you will have to guess a random word, based on the picture.</p>
   <p>2. If you are unable to guess the correct alphabets for the word, you will cause a fail in the round. There will be a total of 6 fails.</p>
   <p>3. Each key will be disable and turn grey after pressed.</p>

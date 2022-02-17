@@ -16,12 +16,37 @@ window.onload = function(){
     randomWordGenerator();
     intialize();
     addKeyboardClicks();
+    $(".modal-body").html(`
+    <divclass="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">
+    <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
+    <p>1. In this game, your aim is to guess a random 5 letters word.</p>
+    <p>2. Definition of the word is given, you can access it by pressing the definition button.</p>
+    <p>3. Please not that the combination of your 5 letter input must be a valid word.</p>
+    <p>4. You have to guessed the word within 5 valid input.</p>
+    <p class="text-center last">Good luck and have fun!</p>
+    </div>`);
+    $(".modal").modal("toggle");
+    $(".modal-title").text("Instruction");
+    $(".modal-body").css("background-color", "#f8f4e4");
 };
 //Reset button
 document.getElementById("reset").onclick = function(){
     location.reload();
 };
-
+document.getElementById("instruction").onclick = function(){
+    $(".modal-body").html(`
+    <divclass="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">
+    <button type="button" class="btn-close"  data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;"></button>
+    <p>1. In this game, your aim is to guess a random 5 letters word.</p>
+    <p>2. Definition of the word is given, you can access it by pressing the definition button.</p>
+    <p>3. Please not that the combination of your 5 letter input must be a valid word.</p>
+    <p>4. You have to guessed the word within 5 valid input.</p>
+    <p class="text-center last">Good luck and have fun!</p>
+    </div>`);
+    $(".modal").modal("toggle");
+    $(".modal-title").text("Instruction");
+    $(".modal-body").css("background-color", "#f8f4e4");
+  };
 //Random word generator
 function randomWordGenerator(){
     const settings = {
