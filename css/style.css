@@ -73,20 +73,21 @@ footer {
   padding: 0.5em;
   font-size: 8pt;
   text-decoration: none;
+  color: #4c4646;
 }
 
 .footer-link:hover {
   padding: 0.5em;
   font-size: 8pt;
-  color: black;
+  color: #4c4646;
   text-decoration: underline;
-  text-decoration-color: black;
+  text-decoration-color: #4c4646;
   text-underline-offset: 5px;
   text-decoration-thickness: 0.2em;
 }
 
 .footer-link:visited {
-  color: black;
+  color: #4c4646;
 }
 
 .footer-copyright {
@@ -102,19 +103,6 @@ footer {
 
 .modal-content {
   position: relative;
-}
-
-.login-link-btn,
-.register-link-btn,
-.home-link-btn {
-  color: rgb(63, 78, 211) !important;
-}
-
-.login-link-btn:hover,
-.register-link-btn:hover,
-.home-link-btn:hover {
-  cursor: pointer !important;
-  color: pink !important;
 }
 
 /* placeholder */
