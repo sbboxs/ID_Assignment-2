@@ -45,7 +45,7 @@ function randomWordGenerator(){
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "random-words5.p.rapidapi.com",
-            "x-rapidapi-key": "bba0d05dddmsh0a21940f54bd48cp1ba4c1jsn987d4ae1ffb1"
+            "x-rapidapi-key": "d64beff58fmshfe50b19bbdc6cdbp118dbcjsn75d832260b29"
         }
     };
     
@@ -76,7 +76,7 @@ function wordDictionaryCheck(guessWord){
                 wordDefinition = response.definition;//Get the definition of the word
                 gameStatus = 1;
             }
-            else{
+            else if (sessionStorage.getItem("username") != null && !response.valid) {
                 location.reload();
             }
             document.getElementById("definition").onclick = function(){
