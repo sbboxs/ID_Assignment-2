@@ -1,3 +1,5 @@
+// With reference to dcode's video, https://www.youtube.com/watch?v=3GsKEtBcGTk&ab_channel=dcode
+
 //If user input error,  show the message of the error
 function setInputError(inputElement, message) {
     inputElement.classList.add("form__input--error");

@@ -1,3 +1,5 @@
+// With reference to dcode's video, https://www.youtube.com/watch?v=3GsKEtBcGTk&ab_channel=dcode
+
 // Create a custom error message
 function setFormMessage(formElement, type, message) {
     const messageElement = formElement.querySelector(".form__message");

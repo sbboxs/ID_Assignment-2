@@ -1,3 +1,5 @@
+// With reference to Science and Technology's video, https://www.youtube.com/watch?v=dgvyE1sJS3Y###&ab_channel=ScienceandTechnology
+
 //Question
 var organ_list = [
   "BRAIN",
