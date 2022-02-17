@@ -176,7 +176,7 @@ This section covers the testing of features and their intended output when a use
 
 ### Display
 
-For our website's display, we mainly used bootstrap to ensure that our layouts remain responsive. Thus, the mobile/small screen size layout of the website is mostly polished and refined so users will not have difficulties navigating and interacting with our website's features.
+For our website's display, we mainly used bootstrap to ensure that our layouts remain responsive. Thus, the mobile/small screen size layout of the website is mostly polished and refined so users will not have difficulties navigating and interacting with our website's features. In terms of pixels, most (if not all) of our website's display above 350px should look great.
 
 An additional feature we added to our website's responsiveness is the navigation button. When a small-enough screen is used, the navigation bar will consolidate into a dropdown triggered by a navigation button. We added this with bootstrap so as to not cramp everything in the navigation bar into a row in a mobile layout.
 
