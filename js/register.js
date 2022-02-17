@@ -48,41 +48,45 @@ $(document).ready(function () {
         let userEmail = $("#signupEmailAddr").val();
         let userName = $("#signupUsername").val();
         let userPassword = $("#signupPassword").val();
-        //Perform AJAX/Fetch
-        let jsondata = { "email": userEmail, "username": userName, "password": userPassword };
-        let settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json",
-                "x-apikey": APIKEY,
-                "cache-control": "no-cache"
-            },
-            "processData": false,
-            "data": JSON.stringify(jsondata),
-            "success": function () {
-                //success modal
-                $(".modal-content").html(`
-                <button type="button" class="btn-close" id="sucessBtn" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;color:white;"></button>
-                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px; margin: 0 auto;"    autoplay></lottie-player>
-                <h2 class="text-center w-100 mb-4" style="color:white;">Account Created Successfully</h2>`);
-                $(".modal-content").addClass("bg-transparent border-0");
-            }
-        };
+        let userRePassword = $("#signupRePassword").val();
+        
+        if(userRePassword == userPassword){
+            //Perform AJAX/Fetch
+            let jsondata = { "email": userEmail, "username": userName, "password": userPassword };
+            let settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://interactivedev-8e44.restdb.io/rest/mochiiedulogin",
+                "method": "POST",
+                "headers": {
+                    "content-type": "application/json",
+                    "x-apikey": APIKEY,
+                    "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": JSON.stringify(jsondata),
+                "success": function () {
+                    //success modal
+                    $(".modal-content").html(`
+                    <button type="button" class="btn-close" id="sucessBtn" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;color:white;"></button>
+                    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px; margin: 0 auto;"    autoplay></lottie-player>
+                    <h2 class="text-center w-100 mb-4" style="color:white;">Account Created Successfully</h2>`);
+                    $(".modal-content").addClass("bg-transparent border-0");
+                }
+            };
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-            sessionStorage.setItem("username", userName);
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+                sessionStorage.setItem("username", userName);
 
-            $("#successBtn").on("click", function(){
-                location.reload();
+                $("#successBtn").on("click", function(){
+                    location.reload();
+                });
+                $(".modal").on('hidden.bs.modal', function() {
+                    location.reload();
+                });
             });
-            $(".modal").on('hidden.bs.modal', function() {
-                location.reload();
-            });
-        });
+        }
     });
 
     // Input validation and database checking
