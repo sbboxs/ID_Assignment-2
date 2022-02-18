@@ -52,7 +52,7 @@ $(document).ready(function () {
         let userPassword = $("#signupPassword").val();
         let userRePassword = $("#signupRePassword").val();
         
-        if(userRePassword == userPassword){
+        if(userRePassword == userPassword && (userPassword.search(/[A-Z]/) != -1 || userPassword.search(/[0-9]/) != -1)){
             //Perform AJAX/Fetch
             let jsondata = { "email": userEmail, "username": userName, "password": userPassword };
             let settings = {
@@ -72,7 +72,7 @@ $(document).ready(function () {
                     $(".modal-content").html(`
                     <button type="button" class="btn-close" id="sucessBtn" data-bs-dismiss="modal" aria-label="Close" style="position:absolute;top:0;right:0;color:white;"></button>
                     <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_obhph3sh.json"  background="transparent"  speed="1"  style="width: 600px; height: 600px; margin: 0 auto;"    autoplay></lottie-player>
-                    <h2 class="text-center w-100 mb-4" style="color:white;">Account Created Successfully</h2>`);
+                    <h2 class="text-center w-100 mb-4" style="color:white;position:absolute;top:50%">Account Created Successfully</h2>`);
                     $(".modal-content").addClass("bg-transparent border-0");
                 }
             };
@@ -133,8 +133,8 @@ $(document).ready(function () {
                 }
             }
             else if (e.target.id === "signupPassword") {
-                if (e.target.value.length > 5) {
-                    if (e.target.value.search(/[A-z]/) == -1 || e.target.value.search(/[0-9]/) == -1) {
+                if (e.target.value.length > 7) {
+                    if (e.target.value.search(/[A-Z]/) == -1 && e.target.value.search(/[0-9]/) == -1) {
                         setInputError(inputElement, "Password must contain at least a capital letter and a number");
                     }
                 }
