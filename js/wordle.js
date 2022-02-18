@@ -18,6 +18,9 @@ window.onload = function(){
     randomWordGenerator();
     intialize();
     addKeyboardClicks();
+    if (sessionStorage.getItem("username") == null){
+        keyboard = false;
+    }
 };
 //Reset button
 document.getElementById("reset").onclick = function(){
@@ -45,7 +48,7 @@ function randomWordGenerator(){
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "random-words5.p.rapidapi.com",
-            "x-rapidapi-key": "d64beff58fmshfe50b19bbdc6cdbp118dbcjsn75d832260b29"
+            "x-rapidapi-key": "f76cd922e8msh80a67c40cdc6ca3p11c800jsne93e72f0f728"
         }
     };
     
