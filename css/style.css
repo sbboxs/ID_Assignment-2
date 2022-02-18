@@ -73,13 +73,13 @@ footer {
   padding: 0.5em;
   font-size: 8pt;
   text-decoration: none;
-  color: #4C4646;
+  color: #4c4646;
 }
 
 .footer-link:hover {
   padding: 0.5em;
   font-size: 8pt;
-  color: #4C4646;
+  color: #4c4646;
   text-decoration: underline;
   text-decoration-color: #4c4646;
   text-underline-offset: 5px;
@@ -87,7 +87,7 @@ footer {
 }
 
 .footer-link:visited {
-  color: #4C4646;
+  color: #4c4646;
 }
 
 .footer-copyright {
@@ -103,6 +103,27 @@ footer {
 
 .modal-content {
   position: relative;
+}
+
+.login-link-btn,
+.register-link-btn,
+.home-link-btn {
+  text-decoration: none;
+  color: #ff6075;
+  cursor: pointer;
+}
+
+.login-link-btn:hover,
+.register-link-btn:hover,
+.home-link-btn:hover {
+  color: #ff6075;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 0.2em;
+}
+
+.login-link-btn:visited {
+  color: #ff6075;
 }
 
 /* placeholder */
