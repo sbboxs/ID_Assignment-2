@@ -26,7 +26,7 @@ $(document).ready(function() {
             let testimonialReview = response[i].review;
             let testimonalCard = `
             <div class="col-lg-4 mb-3">
-                <div class="card border-0">
+                <div class="card border-0 shadow-lg">
                     <div class="d-flex p-3 just-content-start align-items-center">
                         <div class="image-area">
                             <img src="assets/user_display_picture/profile.jpg" class="display-picture">
@@ -61,7 +61,7 @@ $(document).ready(function() {
         }
 
         // Apply posting new testimonial to website feature
-        if(sessionStorage.getItem("username").length != 0){
+        if(sessionStorage.getItem("username") != null){
             // Create add new testimonial button
             $(".testimonial-list").append(`
             <div class="col-lg-4 mb-3 text-center mt-4 add-testimonial-pic-container">
@@ -84,7 +84,7 @@ $(document).ready(function() {
             $("#addTestimonialPic").on("click", function(){
                 let content = `
                 <div class="col-lg-4 mb-3">
-                    <div class="card border-0" id="newCard">
+                    <div class="card border-0 shadow-lg" id="newCard">
                         <div class="d-flex p-3 just-content-start align-items-center">
                             <div class="image-area">
                                 <img src="assets/user_display_picture/profile.jpg" class="display-picture">

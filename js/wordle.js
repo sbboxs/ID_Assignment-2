@@ -30,6 +30,8 @@ document.getElementById("instruction").onclick = function(){
     <p>2. Definition of the word is given, you can access it by pressing the definition button.</p>
     <p>3. Please not that the combination of your 5 letter input must be a valid word.</p>
     <p>4. You have to guessed the word within 5 valid input.</p>
+    <p>5. Green tile represent letter input is present in the word and in the correct position. Yellow tile represent letter input is present in the word but in wrong position.
+    Grey tile represent letter input is not present in the word.</p>
     <p class="text-center last">Good luck and have fun!</p>
     </div>`);
     $(".modal").modal("toggle");

@@ -27,28 +27,12 @@
 }
 
 .container-header {
-  background-color: #FFD1D1;
+  background-color: #ffd1d1;
 }
 
 .container-description {
   font-size: 10pt;
-  color: #4C4646
-}
-
-.login-link-btn {
-  text-decoration: none;
-  color: #FF6075
-}
-
-.login-link-btn:hover {
-  color: #FF6075;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-  text-decoration-thickness: 0.2em;
-}
-
-.login-link-btn:visited {
-  color: #FF6075;
+  color: #4c4646;
 }
 
 .card {
@@ -80,7 +64,7 @@
 
 .fa-star,
 .fa-star-half-alt {
-  color: #FFBF00;
+  color: #ffbf00;
 }
 
 .review-text {
