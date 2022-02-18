@@ -36,8 +36,9 @@ Click [**HERE**](https://sbboxs.github.io/ID_Assignment-2/) to view our website.
 ## **Design Process**
 
 <ins>Content</ins>
-- [Wireframe](design_process/wireframe/)
-- [Mockup](design_process/mockup/)
+
+- [Wireframe](design_process/wireframe.pdf)
+- [Mockup](design_process/mockup.pdf)
 - [Brand Logo Design](design_process/mochiidesign.png)
 
 <ins>Color Pallet</ins>
