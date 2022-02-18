@@ -182,5 +182,3 @@ Click [**HERE**](USER_TESTING.md) to view user testing scenarios.
 - [Science Game All Organ Pictures](https://www.iconfinder.com/iconsets/internal-organs-icon-set)
 
 ### <ins>Acknowledgements</ins>
-
-- We received inspiration for this project from Mr Peter Hung, our tutor for this Interactive Development module at Ngee Ann Polytechnic.

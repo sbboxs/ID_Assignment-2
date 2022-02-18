@@ -42,8 +42,6 @@
 11. Press reset button to start a new round and verify everything is reset.
 12. Enter the correct word and verify that the word to be guessed will also be shown below the "WORDLE" title. (Hint: look at the top of the console log for the answer)
 
-
-
 <br>
 
 <ins>**Science Game**</ins>
@@ -65,8 +63,4 @@
 4. Guess incorrectly 3 times and verify that when all the 3 hearts disappear, the game will end. A pop up will show " Well Done!" and the total number of points scored.
 5. Press the correct answer option and verify that the point score will be plus one, and the next equation with 3 new answer options will be shown.
 6. Please note that the game will only end when all 3 hearts disappear.
-
-
-<br>
-
 
