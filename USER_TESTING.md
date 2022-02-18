@@ -24,9 +24,29 @@
 
 <br>
 
-<ins>**Wordle**</ins>
-
  _**Please note that, due to the high latency of API, please wait for at least 3 seconds before starting testing the game.**_
+
+<br>
+
+<ins>**Wordle**</ins>
+1. Click the 'Class' link in the Navigation Bar
+2. Click the 'Learn' button on the English card
+3. Click the 'Start Learning' button on the Wordle card
+4.
+
+
+
+<br>
+
+<ins>**Science Game**</ins>
+1. Click
+2. Click
+3. Click
+
+<br>
+
+<ins>**Math Game**</ins>
+
 
 1. Go to "English" page by clicking on the "Learn" button inside the "English" card.
 2. Click on the "Start Learning" button to go to the Wordle game.
