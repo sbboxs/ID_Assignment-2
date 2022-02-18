@@ -31,7 +31,7 @@ document.getElementById("instruction").onclick = function(){
     <divclass="my-4 text-left" style="font-size:18px; font-family:Verdana, Geneva, Tahoma, sans-serif;max-height:40vh;line-height:1.5; overflow:scroll; overflow-x:hidden;">
     <p>1. In this game, your aim is to guess a random 5 letters word.</p>
     <p>2. Definition of the word is given, you can access it by pressing the definition button.</p>
-    <p>3. Please not that the combination of your 5 letter input must be a valid word.</p>
+    <p>3. Please not that the combination of your 5 letter input must be a valid word and no PLURAL forms are allowed.</p>
     <p>4. You have to guessed the word within 5 valid input.</p>
     <p>5. Green tile represent letter input is present in the word and in the correct position. Yellow tile represent letter input is present in the word but in wrong position.
     Grey tile represent letter input is not present in the word.</p>
