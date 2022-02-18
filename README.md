@@ -70,7 +70,7 @@ In this section, We will explain the features of we website and list down some a
       <summary>read more</summary>
 
       > The aim of this feature is to allow the user to improve their vocabulary through playing. In wordle, the user are prompted to guess a 5-letter word within 5 tries using hints and clues given with each guess. The definition of the word is also provided if the user is feeling stuck.
-
+      
       </details>
    </details>
 
