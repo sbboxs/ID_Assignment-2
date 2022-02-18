@@ -110,7 +110,7 @@ In this section, We will explain the features of we website and list down some a
       </details>
    </details>
 
-### <ins>Features Left to Implement</ins>
+### <ins>Features to Implement</ins>
 
 - More exclusive features for Members - allow users who are members with an account to view additional contents, giving more benefits to users who login.
 - More features for subject classes - add more features and games for users to explore and play around with.
