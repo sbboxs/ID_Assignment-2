@@ -36,10 +36,9 @@ Click [**HERE**](https://sbboxs.github.io/ID_Assignment-2/) to view our website.
 ## **Design Process**
 
 <ins>Content</ins>
-
-- [Wireframe]()
-- [Mockup]()
-- [Brand Logo Design]()
+- [Wireframe](design_process/wireframe/)
+- [Mockup](design_process/mockup/)
+- [Brand Logo Design](design_process/mochiidesign.png)
 
 <ins>Color Pallet</ins>
 
@@ -169,10 +168,10 @@ Click [**HERE**](USER_TESTING.md) to view user testing scenarios.
 
 - The design and layout of the website were inspired by [Educandy](https://www.educandy.com/) and [IXL](https://sg.ixl.com/)
 
-1. For the wordle game, we received inspiration from YouTuber, Kenny Yip Coding'video. Click [here](https://www.youtube.com/watch?v=ckjRsPaWHX8) to see the video.
-2. For the science game, we received inspiration from YouTuber, Science and Technology'video. Click [here](https://www.youtube.com/watch?v=dgvyE1sJS3Y###) to see the video.
-3. For the math quiz game, we received inspiration from YouTuber, codefoxx's video. Click [here](https://www.youtube.com/watch?v=Uw9wc5wm_mw&t=524s&ab_channel=codefoxx) to see the video.
-4. For the login feature, we received inspiration from YouTuber, dcode's video. Click [here](https://www.youtube.com/watch?v=3GsKEtBcGTk) to see the video.
+1. For the wordle game, we received inspiration from YouTuber, Kenny Yip Coding'video. Click [HERE](https://www.youtube.com/watch?v=ckjRsPaWHX8) to see the video.
+2. For the science game, we received inspiration from YouTuber, Science and Technology'video. Click [HERE](https://www.youtube.com/watch?v=dgvyE1sJS3Y###) to see the video.
+3. For the math quiz game, we received inspiration from YouTuber, codefoxx's video. Click [HERE](https://www.youtube.com/watch?v=Uw9wc5wm_mw&t=524s&ab_channel=codefoxx) to see the video.
+4. For the login feature, we received inspiration from YouTuber, dcode's video. Click [HERE](https://www.youtube.com/watch?v=3GsKEtBcGTk) to see the video.
 
 ### <ins>Media</ins>
 
@@ -183,5 +182,3 @@ Click [**HERE**](USER_TESTING.md) to view user testing scenarios.
 - [Science Game All Organ Pictures](https://www.iconfinder.com/iconsets/internal-organs-icon-set)
 
 ### <ins>Acknowledgements</ins>
-
-- We received inspiration for this project from Mr Peter Hung, our tutor for this Interactive Development module at Ngee Ann Polytechnic.
